@@ -1,0 +1,12 @@
+Bitte bilden Sie eigenständig Gruppen mit 3 oder 4 Mitgliedern, z.B. 3*4 und 1*3.
+
+Beachten Sie: Da das Programm am Präsentationstag lauffähig präsentiert werden muss, ist zu empfehlen, dass die Kommilitonen mit größerer Erfahrung in Java auf die Gruppen verteilt sind. 
+Sonst wird es für die schwächeren Gruppen evtl. nachteilig, da Fehlersuche und Problemlösung länger dauern.
+
+Die Arbeiten werden als Gruppe benotet, d.h. alle Mitglieder erhalten die gleiche Note.
+
+Details zur Ausarbeitung und der Präsentation werden im Rahmen der folgenden Unterrichtstage noch weiter besprochen.
+
+Es gibt mehr Aufgabenstellungen als Gruppen - manche Themen werden nicht bearbeitet.
+
+Bitte koordinieren Sie die Verteilung in die Gruppen selbständig bis zum 08.11. und schicken Sie mir eine Liste an dem Tag durch den Kurssprecher zu.
