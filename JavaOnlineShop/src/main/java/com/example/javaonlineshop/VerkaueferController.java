@@ -3,7 +3,6 @@ package com.example.javaonlineshop;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -12,9 +11,6 @@ import java.io.IOException;
 public class VerkaueferController {
 
     private Stage hauptfenster;  // Die Stage, die als Hauptfenster verwendet wird
-
-    @FXML
-    private Button wechselEinkauf; // Button für den Szenenwechsel
 
     // Standardkonstruktor für den FXMLLoader (wird von FXML verwendet)
     public VerkaueferController() {
@@ -29,6 +25,8 @@ public class VerkaueferController {
     // Methode, die ein neues Fenster öffnet für die einmalige Pin-Vergabe
     @FXML
     public void vergebePinDialog() throws IOException {
+        // ToDO: Überprüfen, ob schon eine Pin in der Datenbank vorhanden ist.
+
         // Erstelle ein neues Stage-Objekt für das Dialogfenster
         Stage dialog = new Stage();
 
@@ -49,10 +47,11 @@ public class VerkaueferController {
         }
 
         // Erstelle die Szene für das Dialogfenster
-        Scene scene = new Scene(root, 400, 170);
+        Scene dialogScene = new Scene(root, 400, 170);
+        dialogScene.getStylesheets().add(getClass().getResource("/com/example/javaonlineshop/Styling/style.css").toExternalForm());
 
         // Dialogfenster konfigurieren und anzeigen
-        dialog.setScene(scene);
+        dialog.setScene(dialogScene);
         dialog.setTitle("Neue Pin vergeben");
         dialog.show();
     }
@@ -68,6 +67,7 @@ public class VerkaueferController {
 
             // Neue Scene erstellen und setzen
             Scene einkaufScene = new Scene(root);
+            einkaufScene.getStylesheets().add(getClass().getResource("/com/example/javaonlineshop/Styling/style.css").toExternalForm());
             hauptfenster.setScene(einkaufScene);
         } else {
             System.out.println("Fehler: Hauptfenster ist null, Scene kann nicht gewechselt werden.");

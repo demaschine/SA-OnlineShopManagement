@@ -12,6 +12,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="wechselEinkauf" layoutX="41.0" layoutY="728.0" mnemonicParsing="false" onAction="#vergebePinDialog" prefHeight="25.0" prefWidth="204.0" text="Zum Einkaufsmodus wechseln" />
+      <Button layoutX="41.0" layoutY="728.0" mnemonicParsing="false" onAction="#vergebePinDialog" prefHeight="25.0" prefWidth="204.0" text="Zum Einkaufsmodus wechseln" />
    </children>
 </AnchorPane>

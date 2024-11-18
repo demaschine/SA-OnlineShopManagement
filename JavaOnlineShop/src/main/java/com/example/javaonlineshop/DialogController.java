@@ -26,21 +26,21 @@ public class DialogController {
     // Methode, die bei Bestätigung aufgerufen wird
     @FXML
     public void dialogBestaetigen() throws IOException {
-        // ToDo: Eine Anbindung an die Datenbank, um die gesicherte Pin zu speichern
-        // (Beispiel: Hier würde der Code für die Datenbankanbindung kommen)
+        // ToDo: Eine Anbindung an die Datenbank, um die neu vergebene Pin abzuspeichern
 
-        // Wechsel der Scene von Verkauf zu Einkauf (Hauptfenster)
+        // Wechsel der Scene von Verkauf zu Einkauf
         if (hauptfenster != null) {
             // VerkaueferController mit dem Stage (Hauptfenster) initialisieren
             VerkaueferController verkaueferController = new VerkaueferController();
             verkaueferController.setHauptfenster(hauptfenster); // Stage setzen
             verkaueferController.wechselEinkauf(); // Wechsel zur nächsten Ansicht
+            this.dialogAbbrechen(); //Dialog schließen nach dem Wechsel
         } else {
             System.out.println("Hauptfenster ist null, der Stage konnte nicht gesetzt werden.");
         }
     }
 
-    // Methode, um das Hauptfenster (Stage) zu setzen
+    // Methode um das Hauptfenster (Stage) zu setzen
     public void setVerkauferFenster(Stage hauptfenster) {
         this.hauptfenster = hauptfenster;
     }
