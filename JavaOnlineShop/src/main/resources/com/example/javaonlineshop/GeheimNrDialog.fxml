@@ -6,14 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="170.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaonlineshop.DialogController">
+<AnchorPane prefHeight="210.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaonlineshop.DialogController">
 
-    <Label layoutX="29.0" layoutY="14.0" prefHeight="27.0" prefWidth="295.0" text="Vergebe Sie eine neue Geheimzahl ">
+    <Label layoutX="29.0" layoutY="25.0" prefHeight="27.0" prefWidth="295.0" text="Vergebe Sie eine neue Geheimzahl ">
         <font>
             <Font size="18.0" />
         </font></Label>
-    <Button fx:id="abbrechen" layoutX="287.0" layoutY="68.0" mnemonicParsing="false" onAction="#dialogAbbrechen" text="Abbrechen" />
-    <Button fx:id="bestaetigen" layoutX="202.0" layoutY="68.0" mnemonicParsing="false" onAction="#dialogBestaetigen" text="Bestätigen " />
-    <TextField layoutX="26.0" layoutY="68.0" prefHeight="25.0" prefWidth="150.0" promptText="Neue Pin vergeben" />
-    <Label layoutX="25.0" layoutY="118.0" prefHeight="17.0" prefWidth="355.0" text="Verwenden sie eine sichere Kombination. Nicht: 1111, 1234, etc." />
+    <Button fx:id="abbrechen" layoutX="372.0" layoutY="120.0" mnemonicParsing="false" onAction="#dialogAbbrechen" text="Abbrechen" />
+    <Button fx:id="bestaetigen" layoutX="249.0" layoutY="120.0" mnemonicParsing="false" onAction="#dialogBestaetigen" text="Bestätigen " />
+    <TextField layoutX="29.0" layoutY="120.0" prefHeight="25.0" prefWidth="175.0" promptText="Neue Pin vergeben" />
+    <Label layoutX="25.0" layoutY="160.0" prefHeight="17.0" prefWidth="355.0" text="Verwenden sie eine sichere Kombination. Nicht: 1111, 1234, etc." />
+   <TextField layoutX="29.0" layoutY="73.0" prefHeight="25.0" prefWidth="175.0" promptText="Neuen Benutzernamen verg." />
 </AnchorPane>

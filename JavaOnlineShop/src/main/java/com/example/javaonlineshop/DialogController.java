@@ -30,8 +30,8 @@ public class DialogController {
 
         // Wechsel der Scene von Verkauf zu Einkauf
         if (hauptfenster != null) {
-            // VerkaueferController mit dem Stage (Hauptfenster) initialisieren
-            VerkaueferController verkaueferController = new VerkaueferController();
+            // VerkaeuferController mit dem Stage (Hauptfenster) initialisieren
+            VerkaeuferController verkaueferController = new VerkaeuferController();
             verkaueferController.setHauptfenster(hauptfenster); // Stage setzen
             verkaueferController.wechselEinkauf(); // Wechsel zur nächsten Ansicht
             this.dialogAbbrechen(); //Dialog schließen nach dem Wechsel
