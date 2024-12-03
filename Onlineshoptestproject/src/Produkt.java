@@ -1,16 +1,33 @@
-public class Produkt {
+public abstract class Produkt {
+    //Private Modifier, Einbindung des Prinzips der Datenkapselung - Getter Setter fuer Attribute
+    private int id;
+    private String name;
     private double einkaufspreis;
     private double verkaufspreis;
     private int bestandsmenge;
 
-    // Konstruktor
-    public Produkt(double einkaufspreis, double verkaufspreis, int bestandsmenge) {
+    //Konstruktor, der von den Subklassen vererbt werden soll
+    public Produkt(int id, String name, double einkaufspreis, double verkaufspreis, int bestandsmenge) {
+        this.id = id;
+        this.name = name;
         this.einkaufspreis = einkaufspreis;
         this.verkaufspreis = verkaufspreis;
         this.bestandsmenge = bestandsmenge;
     }
 
-    // Getter und Setter für Einkaufspreis
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public double getEinkaufspreis() {
         return einkaufspreis;
     }
@@ -19,7 +36,6 @@ public class Produkt {
         this.einkaufspreis = einkaufspreis;
     }
 
-    // Getter und Setter für Verkaufspreis
     public double getVerkaufspreis() {
         return verkaufspreis;
     }
@@ -28,85 +44,24 @@ public class Produkt {
         this.verkaufspreis = verkaufspreis;
     }
 
-    // Getter und Setter für Bestandsmenge
     public int getBestandsmenge() {
         return bestandsmenge;
     }
 
     public void setBestandsmenge(int bestandsmenge) {
         this.bestandsmenge = bestandsmenge;
-        
-        
-    // ToString-Methode (optional, aber praktisch)
+    }
+
+    //Methode, die Werte des Objektes beim Objektaufruf strukturiert wiedergibt
     @Override
     public String toString() {
-        return "Einkaufspreis: " + einkaufspreis +
+        return "ID_PK: " + id +
+                ", Artikelbezeichnung: " + name +
+                ", Einkaufspreis: " + einkaufspreis +
                 ", Verkaufspreis: " + verkaufspreis +
                 ", Bestandsmenge: " + bestandsmenge;
     }
 }
 
-// SubklasseFreizeit 
 
 
-public class Freizeit extends Produkt {
-    private String spieler;
-
-    // Konstruktor
-    public Freizeit(double einkaufspreis, double verkaufspreis, int bestandsmenge, String spieler) {
-        super(einkaufspreis, verkaufspreis, bestandsmenge);
-        this.spieler = spieler;
-    }
-
-    // Getter und Setter für Spieler
-    public String getSpieler() {
-        return spieler;
-    }
-
-    public void setSpieler(String spieler) {
-        this.spieler = spieler;
-    }
-}
-
-// SubklasseBüro
-
-
-public class Büro extends Produkt {
-    private String packungsgroesse;
-
-    // Konstruktor
-    public Büro(double einkaufspreis, double verkaufspreis, int bestandsmenge, String packungsgroesse) {
-        super(einkaufspreis, verkaufspreis, bestandsmenge);
-        this.packungsgroesse = packungsgroesse;
-    }
-
-    // Getter und Setter für Packungsgröße
-    public String getPackungsgroesse() {
-        return packungsgroesse;
-    }
-
-    public void setPackungsgroesse(String packungsgroesse) {
-        this.packungsgroesse = packungsgroesse;
-    }
-}
-
-// SubklasseKüche 
-
-public class Küche extends Produkt {
-    private String gehaeusefarbe;
-
-    // Konstruktor
-    public Küche(double einkaufspreis, double verkaufspreis, int bestandsmenge, String gehaeusefarbe) {
-        super(einkaufspreis, verkaufspreis, bestandsmenge);
-        this.gehaeusefarbe = gehaeusefarbe;
-    }
-
-    // Getter und Setter für Gehäusefarbe
-    public String getGehaeusefarbe() {
-        return gehaeusefarbe;
-    }
-
-    public void setGehaeusefarbe(String gehaeusefarbe) {
-        this.gehaeusefarbe = gehaeusefarbe;
-    }
-}
