@@ -3,11 +3,14 @@ package com.example.javaonlineshop;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 public class VerkaeuferController {
 
@@ -15,12 +18,10 @@ public class VerkaeuferController {
     @FXML
     Pane kopfPane;
     @FXML
-    Pane seitenPane;
+    Pane standartPaneStyle;
+    /***/
     @FXML
-    Pane verwaltungPane;
-    @FXML
-    Pane statistikenPane;
-
+    TableView verlustTable;
 
     private Stage hauptfenster;  //Die Stage, die als Hauptfenster verwendet wird
 
@@ -54,12 +55,19 @@ public class VerkaeuferController {
         }
 
         //Erstelle die Szene für das Dialogfenster
-        Scene dialogScene = new Scene(root, 490, 210);
+        Scene dialogScene = new Scene(root, 490, 220);
         dialogScene.getStylesheets().add(getClass().getResource("/com/example/javaonlineshop/Styling/style.css").toExternalForm());
 
         //Dialogfenster konfigurieren und anzeigen
         dialog.setScene(dialogScene);
         dialog.setTitle("Neue Pin vergeben");
+        InputStream iconStream = getClass().getResourceAsStream("/ImagesAndIcons/JOS_Transparent_Logo.png");
+        if (iconStream == null) {
+            System.out.println("Icon konnte nicht gefunden werden. Ueberpruefe den Pfad.");
+        } else {
+            Image icon = new Image(iconStream);
+            dialog.getIcons().add(icon);
+        }
         dialog.show();
     }
 
@@ -73,7 +81,7 @@ public class VerkaeuferController {
             AnchorPane root = loader.load();
 
             //Neue Scene erstellen und setzen
-            Scene einkaufScene = new Scene(root);
+            Scene einkaufScene = new Scene(root, 1360, 880);
             einkaufScene.getStylesheets().add(getClass().getResource("/com/example/javaonlineshop/Styling/style.css").toExternalForm());
             hauptfenster.setScene(einkaufScene);
         } else {

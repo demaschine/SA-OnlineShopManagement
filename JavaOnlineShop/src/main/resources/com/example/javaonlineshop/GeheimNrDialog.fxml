@@ -4,17 +4,22 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="210.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaonlineshop.DialogController">
-
-    <Label layoutX="29.0" layoutY="25.0" prefHeight="27.0" prefWidth="295.0" text="Vergebe Sie eine neue Geheimzahl ">
-        <font>
-            <Font size="18.0" />
-        </font></Label>
-    <Button fx:id="abbrechen" layoutX="372.0" layoutY="120.0" mnemonicParsing="false" onAction="#dialogAbbrechen" text="Abbrechen" />
-    <Button fx:id="bestaetigen" layoutX="249.0" layoutY="120.0" mnemonicParsing="false" onAction="#dialogBestaetigen" text="Bestätigen " />
-    <TextField layoutX="29.0" layoutY="120.0" prefHeight="25.0" prefWidth="175.0" promptText="Neue Pin vergeben" />
-    <Label layoutX="25.0" layoutY="160.0" prefHeight="17.0" prefWidth="355.0" text="Verwenden sie eine sichere Kombination. Nicht: 1111, 1234, etc." />
-   <TextField layoutX="29.0" layoutY="73.0" prefHeight="25.0" prefWidth="175.0" promptText="Neuen Benutzernamen verg." />
+   <Pane fx:id="hintergrundPane" layoutY="-2.0" prefHeight="220.0" prefWidth="490.0">
+      <children>
+      
+                            <Label layoutX="30.0" layoutY="25.0" prefHeight="27.0" prefWidth="295.0" text="Vergebe Sie eine neue Geheimzahl ">
+              <font>
+                  <Font size="18.0" />
+              </font>
+         </Label>
+         <TextField layoutX="30.0" layoutY="70.0" prefHeight="25.0" prefWidth="175.0" promptText="Neuen Benutzernamen verg." />
+          <TextField layoutX="30.0" layoutY="120.0" prefHeight="25.0" prefWidth="175.0" promptText="Neue Pin vergeben" />
+          <Button fx:id="bestaetigen" layoutX="245.0" layoutY="120.0" mnemonicParsing="false" onAction="#dialogBestaetigen" text="Bestätigen " />
+          <Button fx:id="abbrechen" layoutX="348.0" layoutY="120.0" mnemonicParsing="false" onAction="#dialogAbbrechen" text="Abbrechen" />
+          <Label layoutX="30.0" layoutY="180.0" prefHeight="17.0" prefWidth="355.0" text="Verwenden sie eine sichere Kombination. Nicht: 1111, 1234, etc." />
+      </children></Pane>
 </AnchorPane>

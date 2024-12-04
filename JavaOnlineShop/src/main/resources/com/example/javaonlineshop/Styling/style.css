@@ -1,37 +1,57 @@
+/*Styling für den Hintergrund*/
 .root {
     -fx-background-color: #d3d3d3;
 }
+/*Styling für die Tabelle von Artikeln die Verlust verursachen*/
+#verlustTable {
+    -fx-background-color: transparent;
+    -fx-border-color: #003366;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+}
+
+/*Textbox Styling*/
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: #003366;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-padding: 4px 8px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+.text-field:focused {
+    -fx-border-color: #F6B400;
+    -fx-background-color: #f5f5f5;
+}
+.text-field:hover {
+    -fx-border-color: #e49f00;
+}
+
+/*Styling für die ContentFelder - Pane JavaFX Objekte*/
 #kopfPane {
     -fx-background-color: #003366;
 }
-#seitenPane{
+#standartPaneStyle {
     -fx-background-color: #f5f5f5;
     -fx-background-radius: 4;
 }
-#verwaltungPane {
-    -fx-background-color: #f5f5f5;
-    -fx-background-radius: 4;
-}
-#statistikenPane{
-    -fx-background-color: #f5f5f5;
-    -fx-background-radius: 4;
-}
+
+/*Styling für die Buttons*/
 .button {
     -fx-background-color: #F6B400;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-background-radius: 6px;
-    -fx-padding: 8px 16px;
+    -fx-padding: 4px 8px;
     -fx-border-width: 0;
     -fx-border-radius: 6px;
 }
-
 .button:hover {
     -fx-background-color: #e49f00;
     -fx-cursor: hand;
 }
-
 .button:pressed {
     -fx-background-color: #c78600;
 }

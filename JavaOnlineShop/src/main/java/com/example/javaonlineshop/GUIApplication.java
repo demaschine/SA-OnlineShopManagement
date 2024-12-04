@@ -15,7 +15,7 @@ public class GUIApplication extends Application {
     public void start(Stage stage) throws IOException {
         //Lade das FXML-Layout für die Verkäuferansicht
         FXMLLoader fxmlLoader = new FXMLLoader(GUIApplication.class.getResource("VerkaeuferModus.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1350, 850);
+        Scene scene = new Scene(fxmlLoader.load(), 1360, 880);
         scene.getStylesheets().add(getClass().getResource("/com/example/javaonlineshop/Styling/style.css").toExternalForm());
 
         //Hole den VerkaeuferController aus dem FXMLLoader

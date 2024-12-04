@@ -2,23 +2,464 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaonlineshop.KaeuferController">
+<AnchorPane prefHeight="875.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaonlineshop.KaeuferController">
    <children>
-      <Label layoutX="20.0" layoutY="71.0" text="Einkaufsansicht">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="44.0" fitWidth="282.0" layoutX="20.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../ImagesAndIcons/JOS_Logo.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="55.0" layoutY="734.0" mnemonicParsing="false" text="CSS Test" />
+      <Pane fx:id="standartPaneStyle" layoutX="1105.0" layoutY="75.0" prefHeight="750.0" prefWidth="240.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+         <children>
+            <Button layoutX="25.0" layoutY="675.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Registrieren" />
+            <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0" text="Dein Warenkorb [W]">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TableView layoutX="20.0" layoutY="50.0" prefHeight="500.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="120.0" resizable="false" text="Artikel" />
+                <TableColumn text="Preis in €" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="22.0" layoutY="640.0" prefHeight="25.0" prefWidth="185.0" text="Noch kein Kunde?">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="25.0" layoutY="711.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Als Gast bestellen" />
+            <Label layoutX="14.0" layoutY="561.0" prefHeight="25.0" prefWidth="100.0" text="Summe: " textFill="#008d26">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="126.0" layoutY="561.0" prefHeight="25.0" prefWidth="100.0" text="[V@BerWare]" textFill="#008d26">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="25.0" layoutY="600.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Kaufen">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="kopfPane" prefHeight="60.0" prefWidth="1362.0">
+         <children>
+            <ImageView fitHeight="43.0" fitWidth="346.0" layoutX="15.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../ImagesAndIcons/JOS_Transparent_Logo.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="1091.0" layoutY="20.0" prefHeight="27.0" prefWidth="250.0" text="Dein Rich-Client Onlineshop" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" layoutY="20.0" prefHeight="20.0" prefWidth="185.0" text="Einfach.Zuhause." textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="standartPaneStyle" layoutX="15.0" layoutY="75.0" prefHeight="750.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+         <children>
+            <Button layoutX="5.0" layoutY="627.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Shopverwaltung" />
+            <Button layoutX="5.0" layoutY="667.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Warenkorb laden" />
+            <Button layoutX="5.0" layoutY="705.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Benutzer wechseln" />
+            <Label alignment="CENTER" layoutY="14.0" prefHeight="25.0" prefWidth="185.0" text="Aktueller Benutzer:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="39.0" prefHeight="25.0" prefWidth="185.0" text="[V@User]">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="standartPaneStyle" layoutX="222.0" layoutY="75.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+         <children>
+            <Label layoutX="15.0" layoutY="1.0" prefHeight="25.0" prefWidth="185.0" text="Küchenartikel">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="115.0" layoutY="27.0" startX="-100.0" />
+            <Pane fx:id="standartPaneStyle" layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName1]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis1]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="standartPaneStyle" layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName2]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis2]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="standartPaneStyle" layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName3]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis3]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="standartPaneStyle" layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName4]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis4]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="standartPaneStyle" layoutX="224.0" layoutY="333.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+         <children>
+            <Label layoutX="15.0" layoutY="1.0" prefHeight="25.0" prefWidth="185.0" text="Büroartikel">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="115.0" layoutY="26.0" startX="-100.0" />
+            <Pane fx:id="standartPaneStyle" layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName1]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis1]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="standartPaneStyle" layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName2]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis2]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="standartPaneStyle" layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName3]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis3]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="standartPaneStyle" layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName4]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis4]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="standartPaneStyle" layoutX="222.0" layoutY="590.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+         <children>
+            <Label layoutX="15.0" layoutY="1.0" prefHeight="25.0" prefWidth="185.0" text="Freizeitartikel">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="116.0" layoutY="26.0" startX="-100.0" />
+            <Pane fx:id="standartPaneStyle" layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName1]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis1]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="standartPaneStyle" layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName2]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis2]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="standartPaneStyle" layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName3]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis3]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="standartPaneStyle" layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName4]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis4]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="standartPaneStyle" layoutX="14.0" layoutY="836.0" prefHeight="36.0" prefWidth="1335.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+         <children>
+            <Label layoutX="14.0" layoutY="6.0" prefHeight="25.0" prefWidth="720.0" text="Version 1.0 - Team Einfach.Zuhause - Maximilian Mohr, Simon Braun, Felix Hempel, Paul Sas">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
