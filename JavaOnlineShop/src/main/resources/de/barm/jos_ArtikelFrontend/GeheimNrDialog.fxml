@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="210.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaonlineshop.DialogController">
-   <Pane fx:id="hintergrundPane" layoutY="-2.0" prefHeight="220.0" prefWidth="490.0">
+<AnchorPane prefHeight="210.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.DialogController">
+   <Pane fx:id="standartPaneStyle" layoutY="-2.0" prefHeight="220.0" prefWidth="490.0">
       <children>
       
                             <Label layoutX="30.0" layoutY="25.0" prefHeight="27.0" prefWidth="295.0" text="Vergebe Sie eine neue Geheimzahl ">

@@ -1,4 +1,4 @@
-package com.example.javaonlineshop;
+package de.barm.jos_ArtikelFrontend;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,12 +56,12 @@ public class VerkaeuferController {
 
         //Erstelle die Szene für das Dialogfenster
         Scene dialogScene = new Scene(root, 490, 220);
-        dialogScene.getStylesheets().add(getClass().getResource("/com/example/javaonlineshop/Styling/style.css").toExternalForm());
+        dialogScene.getStylesheets().add(getClass().getResource("/de/barm/jos_ArtikelFrontend/Styling/style.css").toExternalForm());
 
         //Dialogfenster konfigurieren und anzeigen
         dialog.setScene(dialogScene);
         dialog.setTitle("Neue Pin vergeben");
-        InputStream iconStream = getClass().getResourceAsStream("/ImagesAndIcons/JOS_Transparent_Logo.png");
+        InputStream iconStream = getClass().getResourceAsStream("/de/barm/jos_ArtikelFrontend/ImagesAndIcons/JOS_Transparent_Logo.png");
         if (iconStream == null) {
             System.out.println("Icon konnte nicht gefunden werden. Ueberpruefe den Pfad.");
         } else {
@@ -82,7 +82,7 @@ public class VerkaeuferController {
 
             //Neue Scene erstellen und setzen
             Scene einkaufScene = new Scene(root, 1360, 880);
-            einkaufScene.getStylesheets().add(getClass().getResource("/com/example/javaonlineshop/Styling/style.css").toExternalForm());
+            einkaufScene.getStylesheets().add(getClass().getResource("/de/barm/jos_ArtikelFrontend/Styling/style.css").toExternalForm());
             hauptfenster.setScene(einkaufScene);
         } else {
             System.out.println("Fehler: Hauptfenster ist null, Scene kann nicht gewechselt werden.");

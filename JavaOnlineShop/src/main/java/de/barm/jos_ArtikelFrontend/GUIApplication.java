@@ -1,4 +1,4 @@
-package com.example.javaonlineshop;
+package de.barm.jos_ArtikelFrontend;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,7 @@ public class GUIApplication extends Application {
         //Lade das FXML-Layout für die Verkäuferansicht
         FXMLLoader fxmlLoader = new FXMLLoader(GUIApplication.class.getResource("VerkaeuferModus.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1360, 880);
-        scene.getStylesheets().add(getClass().getResource("/com/example/javaonlineshop/Styling/style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/de/barm/jos_ArtikelFrontend/Styling/style.css").toExternalForm());
 
         //Hole den VerkaeuferController aus dem FXMLLoader
         VerkaeuferController verkaueferController = fxmlLoader.getController();
@@ -26,7 +26,7 @@ public class GUIApplication extends Application {
 
         //Stagekonfiguration
         stage.setTitle("Einfach.Zuhause.");
-        InputStream iconStream = getClass().getResourceAsStream("/ImagesAndIcons/JOS_Transparent_Logo.png");
+        InputStream iconStream = getClass().getResourceAsStream("/de/barm/jos_ArtikelFrontend/ImagesAndIcons/JOS_Transparent_Logo.png");
         if (iconStream == null) {
             System.out.println("Icon konnte nicht gefunden werden. Ueberpruefe den Pfad.");
         } else {

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="875.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaonlineshop.VerkaeuferController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="875.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.VerkaeuferController">
    <children>
       <Pane fx:id="standartPaneStyle" layoutX="214.0" layoutY="453.0" prefHeight="360.0" prefWidth="1110.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
          <children>
@@ -170,7 +170,7 @@
          <children>
             <ImageView fitHeight="43.0" fitWidth="346.0" layoutX="15.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../ImagesAndIcons/JOS_Transparent_Logo.png" />
+                  <Image url="@ImagesAndIcons/JOS_Transparent_Logo.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="1156.0" layoutY="20.0" prefHeight="20.0" prefWidth="185.0" text="Verkäufer Dashboard" textFill="WHITE">
@@ -199,7 +199,7 @@
             <Button layoutX="17.0" layoutY="30.0" mnemonicParsing="false" onAction="#vergebePinDialog" prefHeight="25.0" prefWidth="150.0" text="Einkaufen" />
             <ImageView fx:id="einkaufskorbIcon" fitHeight="16.0" fitWidth="16.0" layoutX="135.0" layoutY="35.0" preserveRatio="false">
                <image>
-                  <Image url="@../../../ImagesAndIcons/JOS_Bag_Icon.png" />
+                  <Image url="@ImagesAndIcons/JOS_Bag_Icon.png" />
                </image>
             </ImageView>
          </children>

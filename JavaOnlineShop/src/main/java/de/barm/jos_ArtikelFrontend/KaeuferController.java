@@ -1,7 +1,6 @@
-package com.example.javaonlineshop;
+package de.barm.jos_ArtikelFrontend;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
 public class KaeuferController {

@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="875.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaonlineshop.KaeuferController">
+<AnchorPane prefHeight="875.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.KaeuferController">
    <children>
       <Pane fx:id="standartPaneStyle" layoutX="1105.0" layoutY="75.0" prefHeight="750.0" prefWidth="240.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
          <children>
@@ -54,7 +54,7 @@
          <children>
             <ImageView fitHeight="43.0" fitWidth="346.0" layoutX="15.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../ImagesAndIcons/JOS_Transparent_Logo.png" />
+                  <Image url="@ImagesAndIcons/JOS_Transparent_Logo.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="1091.0" layoutY="20.0" prefHeight="27.0" prefWidth="250.0" text="Dein Rich-Client Onlineshop" textFill="WHITE">
@@ -105,7 +105,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -143,7 +143,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -171,7 +171,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -199,7 +199,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -227,7 +227,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -265,7 +265,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -293,7 +293,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -321,7 +321,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -349,7 +349,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -387,7 +387,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -415,7 +415,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -443,7 +443,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
+                              <Image url="@ImagesAndIcons/JOS_ShoppingCart_Icon.png" />
                            </image>
                         </ImageView>
                      </graphic>

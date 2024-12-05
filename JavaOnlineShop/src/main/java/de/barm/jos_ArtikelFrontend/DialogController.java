@@ -1,4 +1,4 @@
-package com.example.javaonlineshop;
+package de.barm.jos_ArtikelFrontend;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,7 +16,8 @@ public class DialogController {
     @FXML
     private Button abbrechen;
     @FXML
-    private Pane hintergrundPane;
+    Pane standartPaneStyle;
+
 
     // Methode zum Abbrechen des Dialogs
     @FXML
