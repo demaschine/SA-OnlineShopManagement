@@ -7,7 +7,7 @@
  */
 
 public class Freizeitartikel extends Produkt {
-    private String spieler;
+    private int spieler;
 
     /**
      * Konstruktor der die Datenstruktur aus der Produktklasse für Freizeitartikel erweitert.
@@ -15,18 +15,18 @@ public class Freizeitartikel extends Produkt {
      * @code super() ruft den Konstruktor der abstrakten Produktmethode, welche eine Produktstruktur generell vorgibt.
      * @param spieler Das Freizeitartikel-Spezifische Attribut um Informationen über die mögliche Spieleranzahl eines Produktes dazustellen.
      */
-    public Freizeitartikel(int id,String name, double einkaufspreis, double verkaufspreis, int bestandsmenge, String spieler) {
-        super(id, name, einkaufspreis, verkaufspreis, bestandsmenge);
+    public Freizeitartikel(int id,String name, String bildURL, double einkaufspreis, double verkaufspreis, int bestandsmenge, int spieler) {
+        super(id, name, bildURL, einkaufspreis, verkaufspreis, bestandsmenge);
         this.spieler = spieler;
     }
 
     /**@return Gibt die Spieleranzahl eines Freizeitartikels zurück*/
-    public String getSpieler() {
+    public int getSpieler() {
         return spieler;
     }
 
     /**@param spieler Zugriffsmethode um auf das Attribut der Spieleranzahl eines Produktes zuzugreifen*/
-    public void setSpieler(String spieler) {
+    public void setSpieler(int spieler) {
         this.spieler = spieler;
     }
 

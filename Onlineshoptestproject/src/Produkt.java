@@ -15,6 +15,8 @@ public abstract class Produkt {
     private int id;
     /**Produktbezeichnung, weitergabe an Frontend*/
     private String name;
+    /**Produktbild-URL, weitergabe an Frontend*/
+    private String bildURL;
     /**Einkaufspreis, zu welchem, ein gegebenes Produkt erworben wird*/
     private double einkaufspreis;
     /**Verkaufspreis, zu welchem das gegebene Produkt im Shop angeboten wird*/
@@ -27,13 +29,15 @@ public abstract class Produkt {
      *
      * @param id ProduktID
      * @param name Name eines Produkts
+     * @param bildURL Bild-URL eines Produktes
      * @param einkaufspreis Preis des Produkterwerbs
      * @param verkaufspreis Preis des Produktvertriebs
      * @param bestandsmenge Attribut der Lagermenge eines bestimmten Produktes mit eindeutiger ProduktID
      */
-    public Produkt(int id, String name, double einkaufspreis, double verkaufspreis, int bestandsmenge) {
+    public Produkt(int id, String name, String bildURL, double einkaufspreis, double verkaufspreis, int bestandsmenge) {
         this.id = id;
         this.name = name;
+        this.bildURL = bildURL;
         this.einkaufspreis = einkaufspreis;
         this.verkaufspreis = verkaufspreis;
         this.bestandsmenge = bestandsmenge;
@@ -55,6 +59,10 @@ public abstract class Produkt {
     public void setName(String name) {
         this.name = name;
     }
+    /**@return Gibt die Produktbild-URL zurück*/
+    public String getBildURL() { return bildURL; }
+    /**@param bildURL Zugriffsmethode um die Produktbild-URL eines Produktes zu beschreiben*/
+    public void setBildURL(String bildURL) { this.bildURL = bildURL; }
     /**@return Gibt den Einkaufspreis eines Produktes zurück*/
     public double getEinkaufspreis() {
         return einkaufspreis;
@@ -91,6 +99,7 @@ public abstract class Produkt {
                 ", Verkaufspreis: " + verkaufspreis +
                 ", Bestandsmenge: " + bestandsmenge;
     }
+
 }
 
 

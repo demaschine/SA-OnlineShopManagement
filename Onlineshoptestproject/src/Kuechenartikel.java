@@ -16,8 +16,8 @@ public class Kuechenartikel extends Produkt {
      * @param gehaeusefarbe Das Küchenartikel-Spezifische Attribut um Informationen über die Gehäusefarbe abzubilden.
      */
     //Konstruktor mit der Implementierung der super Methode um alle Attribute der Superklasse zu erben
-    public Kuechenartikel(int id, String name, double einkaufspreis, double verkaufspreis, int bestandsmenge, String gehaeusefarbe) {
-        super(id, name, einkaufspreis, verkaufspreis, bestandsmenge);
+    public Kuechenartikel(int id, String name, String bildURL, double einkaufspreis, double verkaufspreis, int bestandsmenge, String gehaeusefarbe) {
+        super(id, name, bildURL, einkaufspreis, verkaufspreis, bestandsmenge);
         this.gehaeusefarbe = gehaeusefarbe;
     }
 

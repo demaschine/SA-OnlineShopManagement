@@ -7,7 +7,7 @@
  */
 
 public class Bueroartikel extends Produkt {
-    private String packungsgroesse;
+    private int packungsgroesse;
 
     /**
      * Konstruktor der die Datenstruktur aus der Produktklasse für Büroartikel erweitert.
@@ -15,18 +15,18 @@ public class Bueroartikel extends Produkt {
      * @code super() ruft den Konstruktor der abstrakten Produktmethode, welche eine Produktstruktur generell vorgibt.
      * @param packungsgroesse Das Büroartikel-Spezifische Attribut um Informationen über die Packungsgröße dazustellen.
      */
-    public Bueroartikel(int id, String name, double einkaufspreis, double verkaufspreis, int bestandsmenge, String packungsgroesse) {
-        super(id, name, einkaufspreis, verkaufspreis, bestandsmenge);
+    public Bueroartikel(int id, String name, String bildURL, double einkaufspreis, double verkaufspreis, int bestandsmenge, int packungsgroesse) {
+        super(id, name, bildURL, einkaufspreis, verkaufspreis, bestandsmenge);
         this.packungsgroesse = packungsgroesse;
     }
 
     /**@return Gibt die Packungsgröße des Büroartikelproduktes zurück.*/
-    public String getPackungsgroesse() {
+    public int getPackungsgroesse() {
         return packungsgroesse;
     }
 
     /**@param packungsgroesse Zugriffsmethode um auf die Packungsgröße eines Produktes zuzugreifen.*/
-    public void setPackungsgroesse(String packungsgroesse) {
+    public void setPackungsgroesse(int packungsgroesse) {
         this.packungsgroesse = packungsgroesse;
     }
 
