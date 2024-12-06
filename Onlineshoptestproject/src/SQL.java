@@ -1,5 +1,5 @@
 /**
- * Diese Klasse setzt die  mit der SQLite Datenbank um.
+ * Diese Klasse setzt die mit der SQLite Datenbank um.
  * @author Simon Braun
  * @version 1.0
  */

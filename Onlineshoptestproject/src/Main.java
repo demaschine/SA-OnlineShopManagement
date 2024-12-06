@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         //Initialisierung der Produktklasse
@@ -31,12 +33,38 @@ public class Main {
         Freizeitartikel test = new Freizeitartikel(1001,"testFreizeit1","", 69.0, 420.0, 1337, 100);
         Bueroartikel test1 = new Bueroartikel(1002, "testBuero1","", 69.0,420.0, 1337, 100);
         Kuechenartikel test2 = new Kuechenartikel(1003, "testBuero1","", 69.0,420.0, 1337, "Schwarz-Rosa-Gold");
+
         SQL.clearDBProdukte();
+
         SQL.addArtikel(test);
         SQL.addArtikel(test1);
         SQL.addArtikel(test2);
 
-        System.out.println(SQL.getArtikel().length);
+       //Test für die SQL Logik, damit ich mich daran orientieren kann.
+
+        ArrayList<Produkt> produktListe = new ArrayList<Produkt>();
+
+        for (Produkt produkt : SQL.getArtikel()) {
+            try{
+                produktListe.add(produkt);
+                System.out.println("Produkt in CacheListe geladen");
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        //Gebe das Produkt nach einem Parameter für die ID aus
+        Produkt gefundenesProdukt = null;
+
+        for (Produkt produkt : SQL.getArtikel()) {
+            if (produkt.getId() == 1001) {
+                gefundenesProdukt = produkt;
+                break;
+            }
+        }
+        System.out.println(gefundenesProdukt);
+
+        System.out.println("Artikelanzahl in der SQL-Datenbank: " + SQL.getArtikel().length);
 
     }
 }
