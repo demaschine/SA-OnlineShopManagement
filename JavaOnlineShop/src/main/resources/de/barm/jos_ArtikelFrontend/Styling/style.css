@@ -29,12 +29,12 @@
 }
 
 /*Styling für die ContentFelder - Pane JavaFX Objekte*/
-#kopfPane {
-    -fx-background-color: #003366;
-}
-#standartPaneStyle {
+.pane {
     -fx-background-color: #f5f5f5;
     -fx-background-radius: 4;
+}
+#kopfPane {
+    -fx-background-color: #003366;
 }
 
 /*Styling für die Buttons*/

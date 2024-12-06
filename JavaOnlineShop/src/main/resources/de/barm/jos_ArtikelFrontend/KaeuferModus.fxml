@@ -11,9 +11,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="875.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.KaeuferController">
+<AnchorPane prefHeight="875.0" prefWidth="1350.0" stylesheets="@Styling/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.KaeuferController">
    <children>
-      <Pane fx:id="standartPaneStyle" layoutX="1105.0" layoutY="75.0" prefHeight="750.0" prefWidth="240.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+      <Pane layoutX="1105.0" layoutY="75.0" prefHeight="750.0" prefWidth="240.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Button layoutX="25.0" layoutY="675.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Registrieren" />
             <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0" text="Dein Warenkorb [W]">
@@ -69,7 +69,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="standartPaneStyle" layoutX="15.0" layoutY="75.0" prefHeight="750.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+      <Pane layoutX="15.0" layoutY="75.0" prefHeight="750.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Button layoutX="5.0" layoutY="627.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Shopverwaltung" />
             <Button layoutX="5.0" layoutY="667.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Warenkorb laden" />
@@ -86,7 +86,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="standartPaneStyle" layoutX="222.0" layoutY="75.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+      <Pane layoutX="222.0" layoutY="75.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="15.0" layoutY="1.0" prefHeight="25.0" prefWidth="185.0" text="Küchenartikel">
                <font>
@@ -94,7 +94,7 @@
                </font>
             </Label>
             <Line endX="100.0" layoutX="115.0" layoutY="27.0" startX="-100.0" />
-            <Pane fx:id="standartPaneStyle" layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -122,7 +122,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="standartPaneStyle" layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -150,7 +150,7 @@
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="standartPaneStyle" layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -178,7 +178,7 @@
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="standartPaneStyle" layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -208,7 +208,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="standartPaneStyle" layoutX="224.0" layoutY="333.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+      <Pane layoutX="224.0" layoutY="333.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="15.0" layoutY="1.0" prefHeight="25.0" prefWidth="185.0" text="Büroartikel">
                <font>
@@ -216,7 +216,7 @@
                </font>
             </Label>
             <Line endX="100.0" layoutX="115.0" layoutY="26.0" startX="-100.0" />
-            <Pane fx:id="standartPaneStyle" layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -244,7 +244,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="standartPaneStyle" layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -272,7 +272,7 @@
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="standartPaneStyle" layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -300,7 +300,7 @@
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="standartPaneStyle" layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -330,7 +330,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="standartPaneStyle" layoutX="222.0" layoutY="590.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+      <Pane layoutX="222.0" layoutY="590.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="15.0" layoutY="1.0" prefHeight="25.0" prefWidth="185.0" text="Freizeitartikel">
                <font>
@@ -338,7 +338,7 @@
                </font>
             </Label>
             <Line endX="100.0" layoutX="116.0" layoutY="26.0" startX="-100.0" />
-            <Pane fx:id="standartPaneStyle" layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -366,7 +366,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="standartPaneStyle" layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -394,7 +394,7 @@
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="standartPaneStyle" layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -422,7 +422,7 @@
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="standartPaneStyle" layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+            <Pane layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -452,7 +452,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="standartPaneStyle" layoutX="14.0" layoutY="836.0" prefHeight="36.0" prefWidth="1335.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+      <Pane layoutX="14.0" layoutY="836.0" prefHeight="36.0" prefWidth="1335.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="14.0" layoutY="6.0" prefHeight="25.0" prefWidth="720.0" text="Version 1.0 - Team Einfach.Zuhause - Maximilian Mohr, Simon Braun, Felix Hempel, Paul Sas">
                <font>

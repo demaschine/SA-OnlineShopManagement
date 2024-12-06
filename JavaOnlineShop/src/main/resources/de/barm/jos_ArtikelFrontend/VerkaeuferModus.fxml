@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="875.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.VerkaeuferController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="875.0" prefWidth="1350.0" stylesheets="@Styling/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.VerkaeuferController">
    <children>
-      <Pane fx:id="standartPaneStyle" layoutX="214.0" layoutY="453.0" prefHeight="360.0" prefWidth="1110.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+      <Pane layoutX="214.0" layoutY="453.0" prefHeight="360.0" prefWidth="1110.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="100.0" text="Statistiken">
                <font>
@@ -65,7 +65,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="standartPaneStyle" layoutX="214.0" layoutY="80.0" prefHeight="360.0" prefWidth="1110.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+      <Pane layoutX="214.0" layoutY="80.0" prefHeight="360.0" prefWidth="1110.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane" stylesheets="@Styling/style.css">
          <children>
             <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="100.0" text="Verwaltung">
                <font>
@@ -166,7 +166,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="kopfPane" layoutX="-4.0" prefHeight="60.0" prefWidth="1356.0">
+      <Pane fx:id="kopfPane" layoutX="-4.0" prefHeight="60.0" prefWidth="1356.0" stylesheets="@Styling/style.css">
          <children>
             <ImageView fitHeight="43.0" fitWidth="346.0" layoutX="15.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -185,7 +185,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="standartPaneStyle" layoutX="14.0" layoutY="830.0" prefHeight="36.0" prefWidth="1310.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+      <Pane fx:id="standartPaneStyle" layoutX="14.0" layoutY="830.0" prefHeight="36.0" prefWidth="1310.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="14.0" layoutY="6.0" prefHeight="25.0" prefWidth="720.0" text="Version 1.0 - Team Einfach.Zuhause - Maximilian Mohr, Simon Braun, Felix Hempel, Paul Sas">
                <font>
@@ -194,7 +194,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="standartPaneStyle" layoutX="14.0" layoutY="80.0" prefHeight="733.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);">
+      <Pane fx:id="standartPaneStyle" layoutX="14.0" layoutY="80.0" prefHeight="733.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Button layoutX="17.0" layoutY="30.0" mnemonicParsing="false" onAction="#vergebePinDialog" prefHeight="25.0" prefWidth="150.0" text="Einkaufen" />
             <ImageView fx:id="einkaufskorbIcon" fitHeight="16.0" fitWidth="16.0" layoutX="135.0" layoutY="35.0" preserveRatio="false">
