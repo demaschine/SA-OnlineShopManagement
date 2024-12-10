@@ -40,6 +40,10 @@ public class Main {
         SQL.addArtikel(test1);
         SQL.addArtikel(test2);
 
+        test.setName("testFreizeit1 Hier könnte IHRE Werbung stehen");
+
+        SQL.updateArtikel(test);
+
        //Test für die SQL Logik, damit ich mich daran orientieren kann.
 
         ArrayList<Produkt> produktListe = new ArrayList<Produkt>();
@@ -66,5 +70,18 @@ public class Main {
 
         System.out.println("Artikelanzahl in der SQL-Datenbank: " + SQL.getArtikel().length);
 
+        //User-Tests
+
+        //System.out.println(SQL.addUser("testUser1", 1234, false));
+        System.out.println(SQL.updateUserPIN("testUser1", 1234));
+        System.out.println(SQL.updateUserVendor("testUser1", 1234, false));
+        System.out.println(SQL.authUser("testUser1", 1234));
+        System.out.println(SQL.authVendor("testUser1", 1234));
+        System.out.println(SQL.updateUserVendor("testUser1", 1234, true));
+        System.out.println(SQL.authUser("testUser1", 1234));
+        System.out.println(SQL.authVendor("testUser1", 1234));
+        System.out.println(SQL.updateUserPIN("testUser1", 1235));
+        System.out.println(SQL.authUser("testUser1", 1234));
+        System.out.println(SQL.authVendor("testUser1", 1234));
     }
 }
