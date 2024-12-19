@@ -48,17 +48,17 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="275.0" layoutY="70.0" prefHeight="25.0" prefWidth="185.0" text="[V@EinPreiAWare]">
+            <Label fx:id="einPreisAllerWarenLabel" layoutX="275.0" layoutY="70.0" prefHeight="25.0" prefWidth="185.0" text="[V@EinPreiAWare]">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="275.0" layoutY="120.0" prefHeight="25.0" prefWidth="185.0" text="[V@VerPreiAWare]">
+            <Label fx:id="verPreisAllerWarenLabel" layoutX="275.0" layoutY="120.0" prefHeight="25.0" prefWidth="185.0" text="[V@VerPreiAWare]">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="275.0" layoutY="170.0" prefHeight="25.0" prefWidth="185.0" text="[V@ArtMtGrGewinn]">
+            <Label fx:id="artikelMitMeistGewLabel" layoutX="275.0" layoutY="170.0" prefHeight="25.0" prefWidth="185.0" text="[V@ArtMtGrGewinn]">
                <font>
                   <Font size="16.0" />
                </font>
@@ -77,8 +77,8 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="15.0" layoutY="100.0" prefHeight="25.0" prefWidth="290.0" promptText="Eingabe der Produkt ID für die Auswahl" />
-            <Button layoutX="330.0" layoutY="100.0" mnemonicParsing="false" onAction="#vergebePinDialog" prefHeight="25.0" prefWidth="120.0" text="Bestätigen" />
+            <TextField fx:id="idFeld" layoutX="15.0" layoutY="100.0" prefHeight="25.0" prefWidth="290.0" promptText="Eingabe der Produkt ID für die Auswahl" />
+            <Button fx:id="werteBestaetigButton" layoutX="330.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Bestätigen" />
             <Label layoutX="15.0" layoutY="145.0" prefHeight="25.0" prefWidth="350.0" text="Informationen über das ausgewählte Produkt">
                <font>
                   <Font name="System Bold" size="16.0" />
@@ -129,32 +129,32 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="750.0" layoutY="60.0" prefHeight="25.0" prefWidth="250.0" promptText="Neuer Produktname" />
-            <TextField layoutX="750.0" layoutY="100.0" prefHeight="25.0" prefWidth="250.0" promptText="Neuer Einkaufspreis" />
-            <TextField layoutX="750.0" layoutY="140.0" prefHeight="25.0" prefWidth="250.0" promptText="Neuer Verkaufspreis" />
-            <TextField layoutX="750.0" layoutY="180.0" prefHeight="25.0" prefWidth="250.0" promptText="Neue Bestandsmenge" />
-            <Button layoutX="815.0" layoutY="250.0" mnemonicParsing="false" onAction="#vergebePinDialog" prefHeight="25.0" prefWidth="185.0" text="Werte aktualisieren" />
-            <Label layoutX="200.0" layoutY="180.0" prefHeight="25.0" prefWidth="250.0" text="[V@ID]">
+            <TextField fx:id="neuProdNameFeld" layoutX="750.0" layoutY="60.0" prefHeight="25.0" prefWidth="250.0" promptText="Neuer Produktname" />
+            <TextField fx:id="neuEinPreisFeld" layoutX="750.0" layoutY="100.0" prefHeight="25.0" prefWidth="250.0" promptText="Neuer Einkaufspreis" />
+            <TextField fx:id="neuVerPreisFeld" layoutX="750.0" layoutY="140.0" prefHeight="25.0" prefWidth="250.0" promptText="Neuer Verkaufspreis" />
+            <TextField fx:id="neuMengeFeld" layoutX="750.0" layoutY="180.0" prefHeight="25.0" prefWidth="250.0" promptText="Neue Bestandsmenge" />
+            <Button fx:id="werteAktualisierenButton" layoutX="815.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Werte aktualisieren" />
+            <Label fx:id="idLabel" layoutX="200.0" layoutY="180.0" prefHeight="25.0" prefWidth="250.0" text="[V@ID]">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="200.0" layoutY="205.0" prefHeight="25.0" prefWidth="250.0" text="[V@ProdName]">
+            <Label fx:id="prodNameLabel" layoutX="200.0" layoutY="205.0" prefHeight="25.0" prefWidth="250.0" text="[V@ProdName]">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="200.0" layoutY="230.0" prefHeight="25.0" prefWidth="250.0" text="[V@EinPreis]">
+            <Label fx:id="einPreisLabel" layoutX="200.0" layoutY="230.0" prefHeight="25.0" prefWidth="250.0" text="[V@EinPreis]">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="200.0" layoutY="255.0" prefHeight="25.0" prefWidth="250.0" text="[V@VerPreis]">
+            <Label fx:id="verPreisLabel" layoutX="200.0" layoutY="255.0" prefHeight="25.0" prefWidth="250.0" text="[V@VerPreis]">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="200.0" layoutY="280.0" prefHeight="25.0" prefWidth="250.0" text="[V@Menge]">
+            <Label fx:id="mengeLabel" layoutX="200.0" layoutY="280.0" prefHeight="25.0" prefWidth="250.0" text="[V@Menge]">
                <font>
                   <Font size="16.0" />
                </font>
@@ -185,7 +185,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="standartPaneStyle" layoutX="14.0" layoutY="830.0" prefHeight="36.0" prefWidth="1310.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+      <Pane layoutX="14.0" layoutY="830.0" prefHeight="36.0" prefWidth="1310.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="14.0" layoutY="6.0" prefHeight="25.0" prefWidth="720.0" text="Version 1.0 - Team Einfach.Zuhause - Maximilian Mohr, Simon Braun, Felix Hempel, Paul Sas">
                <font>
@@ -194,9 +194,9 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="standartPaneStyle" layoutX="14.0" layoutY="80.0" prefHeight="733.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+      <Pane layoutX="14.0" layoutY="80.0" prefHeight="733.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
-            <Button layoutX="17.0" layoutY="30.0" mnemonicParsing="false" onAction="#vergebePinDialog" prefHeight="25.0" prefWidth="150.0" text="Einkaufen" />
+            <Button fx:id="einkaufenButton" layoutX="17.0" layoutY="30.0" mnemonicParsing="false" onAction="#vergebePinDialog" prefHeight="25.0" prefWidth="150.0" text="Einkaufen" />
             <ImageView fx:id="einkaufskorbIcon" fitHeight="16.0" fitWidth="16.0" layoutX="135.0" layoutY="35.0" preserveRatio="false">
                <image>
                   <Image url="@ImagesAndIcons/JOS_Bag_Icon.png" />

@@ -3,7 +3,10 @@ package de.barm.jos_ArtikelFrontend;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -14,12 +17,51 @@ import java.io.InputStream;
 
 public class VerkaeuferController {
 
+    //FXML Label Variablen
+    @FXML
+    Label idLabel;
+    @FXML
+    Label prodNameLabel;
+    @FXML
+    Label einPreisLabel;
+    @FXML
+    Label verPreisLabel;
+    @FXML
+    Label mengeLabel;
+
+    //FXML Label Varliablen errechnet
+    @FXML
+    Label einPreisAllerWarenLabel;
+    @FXML
+    Label verPreisAllerWarenLabel;
+    @FXML
+    Label artikelMitMeistGewLabel;
+
+    //FXML Buttons
+    @FXML
+    Button einkaufenButton;
+    @FXML
+    Button werteBestaetigButton;
+    @FXML
+    Button werteAktualisierenButton;
+
+    //FXML Textfield Varliablen
+    @FXML
+    TextField idFeld;
+    @FXML
+    TextField neuProdNameFeld;
+    @FXML
+    TextField neuEinPreisFeld;
+    @FXML
+    TextField neuVerPreisFeld;
+    @FXML
+    TextField neuMengeFeld;
+
     //FXML Variablenaufrufe
     @FXML
     Pane kopfPane;
-    @FXML
-    Pane standartPaneStyle;
-    /***/
+
+    //FXML TableView Variable
     @FXML
     TableView verlustTable;
 
