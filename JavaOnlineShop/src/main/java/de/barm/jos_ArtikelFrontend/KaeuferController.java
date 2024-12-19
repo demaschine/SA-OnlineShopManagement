@@ -122,7 +122,7 @@ public class KaeuferController {
     public void initialize() {
         labelInitialsierung();
     }
-    /**In dieser Methode werden die Labels initialisiert, sodass die Placeholder mit den Werten aus der Datenbank ersetzt werden.*/
+    /**In dieser Methode werden die Labels initialisiert, sodass die Placeholder mit den Werten aus der Datenbank ersetzt werden, Schleife geht über alle Labels.*/
     public void labelInitialsierung (){
         //So werden die Labels gesetzt.
         userName.setText("Username");
@@ -131,23 +131,31 @@ public class KaeuferController {
         for (Produkt produkt : Objects.requireNonNull(SQL.getArtikel())) {
             try{
                 produktListe.add(produkt);
-                System.out.println("Produkt in CacheListe geladen");
+                System.out.println("DebugLog - Produkt wurde in die Liste geladen");
             }catch (Exception e){
                 e.printStackTrace();
             }
         }
         System.out.println(produktListe.toString());
 
-        kArtikelName1.setText(!produktListe.isEmpty() && produktListe.get(0) != null ? produktListe.get(0).getName() : "Name nicht verfügbar");
-        kArtikelName2.setText(produktListe.size() > 1 && produktListe.get(1) != null ? produktListe.get(1).getName() : "Name nicht verfügbar");
-        kArtikelName3.setText(produktListe.size() > 2 && produktListe.get(2) != null ? produktListe.get(2).getName() : "Name nicht verfügbar");
-        kArtikelName4.setText(produktListe.size() > 3 && produktListe.get(3) != null ? produktListe.get(3).getName() : "Name nicht verfügbar");
+        Label[] artikelNames = {kArtikelName1, kArtikelName2, kArtikelName3, kArtikelName4,
+                bArtikelName1, bArtikelName2, bArtikelName3, bArtikelName4,
+                fArtikelName1, fArtikelName2, fArtikelName3, fArtikelName4};
 
-        kArtikelPreis1.setText(!produktListe.isEmpty() && produktListe.get(0) != null ? Double.toString(produktListe.get(0).getVerkaufspreis()) + " €" : "Preis nicht verfügbar");
-        kArtikelPreis2.setText(produktListe.size() > 1 && produktListe.get(1) != null ? Double.toString(produktListe.get(1).getVerkaufspreis()) + " €" : "Preis nicht verfügbar");
-        kArtikelPreis3.setText(produktListe.size() > 2 && produktListe.get(2) != null ? Double.toString(produktListe.get(2).getVerkaufspreis()) + " €" : "Preis nicht verfügbar");
-        kArtikelPreis4.setText(produktListe.size() > 3 && produktListe.get(3) != null ? Double.toString(produktListe.get(3).getVerkaufspreis()) + " €" : "Preis nicht verfügbar");
+        Label[] artikelPreise = {kArtikelPreis1, kArtikelPreis2, kArtikelPreis3, kArtikelPreis4,
+                bArtikelPreis1, bArtikelPreis2, bArtikelPreis3, bArtikelPreis4,
+                fArtikelPreis1, fArtikelPreis2, fArtikelPreis3, fArtikelPreis4};
 
+        for (int i = 0; i < artikelNames.length; i++) {
+            if (i < produktListe.size()) {
+                Produkt produkt = produktListe.get(i);
+                artikelNames[i].setText(produkt != null ? produkt.getName() : "Name nicht verfügbar");
+                artikelPreise[i].setText(produkt != null ? Double.toString(produkt.getVerkaufspreis()) + " €" : "Preis nicht verfügbar");
+            } else {
+                artikelNames[i].setText("Name nicht verfügbar");
+                artikelPreise[i].setText("Preis nicht verfügbar");
+            }
+        }
     }
 
     /**Methode fügt ausgewählten Artikel zur Warenkorbliste hinzu - benötigt eine Überladung*/
