@@ -89,7 +89,6 @@ public class SQL {
         return true;
     }
 
-
     /**Löscht alle Produkte samt Vererbungshierarchie aus der Datenbank*/
     public static void clearDBProdukte(){
         try {
@@ -107,7 +106,7 @@ public class SQL {
      * @return Array an typisierten Produkten
      */
     public static Produkt[] getArtikel(){
-        String stmt = "SELECT a._id, f._id, b._id, k._id, a.Name, a.BildURL, a.Einkaufspreis, a.Verkaufspreis, a.Bestand, f.MaxSpieler, b.Packungsgroesse, k.Farbe FROM Artikel a LEFT JOIN Freizeit f ON a._id = f._id LEFT JOIN Buero b ON a._id LEFT JOIN Kueche k ON a._id = k._id;";
+        String stmt = "SELECT a._id, f._id, b._id, k._id, a.Name, a.BildURL, a.Einkaufspreis, a.Verkaufspreis, a.Bestand, f.MaxSpieler, b.Packungsgroesse, k.Farbe FROM Artikel a LEFT JOIN Freizeit f ON a._id = f._id LEFT JOIN Buero b ON a._id LEFT JOIN Kueche k ON a._id = k._id ORDER BY a._id;";
         ResultSet res = null;
         ArrayList<Produkt> out = new ArrayList<Produkt>();
         try {
@@ -129,6 +128,82 @@ public class SQL {
         }
         return null;
     }
+
+    /**
+     * Importiert den Warenkorb eines Users
+     * (aktuell Ungetestet)
+     * @return Array an typisierten Produkten, der Bestand ist in dem fall die Anzahl in Warenkorb
+     */
+    public static Produkt[] getWarenkorb(String user){
+        String stmt = "SELECT a._id, f._id, b._id, k._id, a.Name, a.BildURL, a.Einkaufspreis, a.Verkaufspreis, w.Anzahl, f.MaxSpieler, b.Packungsgroesse, k.Farbe FROM Warenkorb w LEFT JOIN Artikel a ON w._idArt = a._id LEFT JOIN Freizeit f ON a._id = f._id LEFT JOIN Buero b ON a._id LEFT JOIN Kueche k ON a._id = k._id WHERE w._idUser = '%s';";
+        Formatter f = new Formatter(Locale.US);
+        stmt = String.valueOf(f.format(stmt, user));
+        ResultSet res = null;
+        ArrayList<Produkt> out = new ArrayList<Produkt>();
+        try {
+            res = runQuery(stmt);
+            while (res.next()){
+                if(res.getInt(1) == res.getInt(2)){
+                    out.add(new Freizeitartikel(res.getInt(1), res.getString(5), res.getString(6), res.getDouble(7), res.getDouble(8), res.getInt(9), res.getInt(10)));
+                }
+                if(res.getInt(1) == res.getInt(3)){
+                    out.add(new Bueroartikel(res.getInt(1), res.getString(5), res.getString(6), res.getDouble(7), res.getDouble(8), res.getInt(9), res.getInt(11)));
+                }
+                if(res.getInt(1) == res.getInt(4)){
+                    out.add(new Kuechenartikel(res.getInt(1), res.getString(5), res.getString(6), res.getDouble(7), res.getDouble(8), res.getInt(9), res.getString(12)));
+                }
+            }
+            return out.toArray(new Produkt[out.size()]);
+        } catch (SQLException e) {
+            System.out.print(e);
+        }
+        return null;
+    }
+
+    /**
+     * Fügt ein Produkt in dem Warenkorb eines Users hinzu
+     * (aktuell ungetestet)
+     * @param p Produkt, dass in den Warenkorb gelegt werden soll
+     * @param user Username
+     * @param anzahl Anzahl der Artikel, wie sie im Warenkorb liegen sollen
+     * @return true, wenn erfolgreich eingefügt wurde
+     */
+    public static boolean addArtikelInWarenkorb(Produkt p, String user, int anzahl){
+        Formatter f = new Formatter(Locale.US);
+        String stmt = "INSERT INTO Warenkorb(_idArt, _idUser, Anzahl) VALUES(%d, '%s', %d);";
+        stmt = String.valueOf(f.format(stmt, p.getId(),user, anzahl));
+
+        try {
+            runUpdate(stmt);
+        } catch (SQLException e) {
+            System.out.print(e);
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Aktualisiert ein Produkt in der Datenbak basierend auf dem übergebenen Produkt
+     * (aktuell ungetestet)
+     * @param p Produkt, wie es in der Datenbank stehen soll
+     * @return true, wenn erfolgreich aktualisiert wurde
+     */
+    public static boolean updateArtikelAnzahlInWarenkorb(Produkt p){
+        Formatter f = new Formatter(Locale.US);
+        String stmt = "UPDATE Warenkorb SET  Einkaufspreis = %f, Verkaufspreis = %f, Bestand = %d WHERE _id = %d;";
+        stmt = String.valueOf(f.format(stmt, p.getName(), p.getEinkaufspreis(), p.getVerkaufspreis(), p.getBestandsmenge(), p.getId()));
+
+        try {
+            runUpdate(stmt);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+            //return false; (nach debuggen der funktion so einfügen)
+        }
+        return true;
+    }
+
+
 
     /**
      * Überprüft, ob ein User in der Datenbank eingetragen ist
