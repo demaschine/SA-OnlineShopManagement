@@ -1,12 +1,9 @@
 package de.barm.jos_ArtikelFrontend;
 
-import de.barm.jos_Datenbankanbindung.SQL;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -18,14 +15,6 @@ public class VendorLoginController {
     // FXML Button Variablen
     @FXML Button loginButton;
     @FXML Button cancelButton;
-
-    // FXML TextField Variablen
-    @FXML TextField loginTextField;
-    @FXML PasswordField passwordTextField;
-
-    private String vendorname;
-    private int password;
-    private Stage hauptfenster;
 
     @FXML
     public void wechselZuVerkaeufer() throws IOException {

@@ -9,5 +9,7 @@ module com.example.javaonlineshop {
     requires java.sql;
 
     opens de.barm.jos_ArtikelFrontend to javafx.fxml;
+    opens de.barm.jos_ArtikelBackend to javafx.fxml;
     exports de.barm.jos_ArtikelFrontend;
+    exports de.barm.jos_ArtikelBackend;
 }

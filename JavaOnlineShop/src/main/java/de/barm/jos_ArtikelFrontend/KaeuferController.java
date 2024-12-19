@@ -2,12 +2,13 @@ package de.barm.jos_ArtikelFrontend;
 
 import de.barm.jos_ArtikelBackend.Produkt;
 import de.barm.jos_Datenbankanbindung.SQL;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -81,11 +82,9 @@ public class KaeuferController {
     @FXML
     Button shopVerwaltung;
     @FXML
-    Button benutzerWechseln;
-    @FXML
     Button artikelKaufen;
     @FXML
-    Button benutzerRegistrieren;
+    Button einkaufWiederherstellen;
 
     @FXML
     Button kKaufenButton1;
@@ -114,13 +113,34 @@ public class KaeuferController {
     @FXML
     Button fKaufenButton4;
 
+    @FXML Button anmeldenButton;
+    @FXML Button registrierenButton;
+
     //FXML TableView Variable
     @FXML
-    TableView warenkorb;
+    private TableView<Produkt> warenkorbTableView;
+    @FXML
+    private ObservableList<Produkt> warenkorbListe = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<Produkt, String> nameColumn;
+    @FXML
+    private TableColumn<Produkt, Double> preisColumn;
 
     //FXML ObjektIDs für das Aussehen
     @FXML
     Pane kopfPane;
+
+    //FXML TextField für die Anmeldung
+    @FXML
+    TextField loginNameFeld;
+    @FXML
+    TextField loginPinFeld;
+    @FXML
+    TextField neuerNameFeld;
+    @FXML
+    TextField neuePinFeld;
+
+    private String currentUser;
 
     public void initialize() {
         labelInitialsierung();
@@ -168,7 +188,7 @@ public class KaeuferController {
         for (int i = 0; i < bKaufenButtons.length; i++) {
             final int index = i;
             if (i < produktListe.size()) {
-                Produkt produkt = produktListe.get(i);
+                Produkt produkt = produktListe.get(i+4);
                 bKaufenButtons[i].setOnAction(event -> {
                     try {
                         fuegeArtikelZumWarenkorb(produkt, index);
@@ -186,7 +206,7 @@ public class KaeuferController {
         for (int i = 0; i < fKaufenButtons.length; i++) {
             final int index = i;
             if (i < produktListe.size()) {
-                Produkt produkt = produktListe.get(i);
+                Produkt produkt = produktListe.get(i+8);
                 fKaufenButtons[i].setOnAction(event -> {
                     try {
                         fuegeArtikelZumWarenkorb(produkt, index);
@@ -220,28 +240,15 @@ public class KaeuferController {
                 artikelPreise[i].setText("Preis nicht verfügbar");
             }
         }
-    }
 
-    /**Methode öffnet ein Dialogfenster, um sich einzuloggen oder neu zu registrieren*/
-    public void loginRegisterDialog() throws IOException {
-        Stage loginDialog = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginRegisterDialog.fxml"));
-        AnchorPane root = loader.load();
-        Scene dialogScene = new Scene(root, 400, 600);
-        dialogScene.getStylesheets().add(getClass().getResource("/de/barm/jos_ArtikelFrontend/Styling/style.css").toExternalForm());
+        // Setze die TableColumn für den Namen des Produkts
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
-        loginDialog.setScene(dialogScene);
-        loginDialog.setTitle("Neuen Nutzer registrieren / einloggen");
+        // Setze die TableColumn für den Preis des Produkts
+        preisColumn.setCellValueFactory(new PropertyValueFactory<>("verkaufspreis"));
 
-        InputStream iconStream = getClass().getResourceAsStream("/de/barm/jos_ArtikelFrontend/ImagesAndIcons/JOS_Transparent_Logo.png");
-        if (iconStream == null) {
-            System.out.println("Icon konnte nicht gefunden werden. Ueberpruefe den Pfad.");
-        } else {
-            Image icon = new Image(iconStream);
-            loginDialog.getIcons().add(icon);
-        }
-
-        loginDialog.show();
+        // Setze die ObservableList als Datenquelle für das TableView
+        warenkorbTableView.setItems(warenkorbListe);
     }
 
     public void wechselZuVerkauf() throws IOException {
@@ -276,15 +283,37 @@ public class KaeuferController {
 
     /**Methode fügt ausgewählten Artikel zur Warenkorbliste hinzu - benötigt eine Überladung*/
     public void fuegeArtikelZumWarenkorb(Produkt produkt, int index) throws IOException {
-        //Check ob CurrentUserID != Null → Wenn ja dann LoginRegisterDialog()
-        System.out.println("Produkt " + produkt.getName() + " mit Index " + index + " wurde gekauft.");
-        //Füge der CurrentUserID das Produkt hinzu.
-        //Schreibe den Artikel in den Warenkorb
+        //Benötigt noch das Login
+
+        //Button Lambdaparamaterzuweisung - Test das es geht.
+        System.out.println("DEBUG - Produkt " + produkt.getName() + " mit Index " + index + " wurde gekauft.");
+        //In die Datenbank schreiben
+        SQL.addArtikelInWarenkorb(produkt,"Paul", 1);
+
+        warenkorbListe.add(produkt);
+        updateWarenkorbSumme();
+    }
+
+    private void updateWarenkorbSumme() {
+        double summe = 0;
+        for (Produkt produkt : warenkorbListe) {
+            summe += produkt.getVerkaufspreis();
+        }
+        summePreis.setText(String.format("%.2f €", summe));
     }
 
     /**Methode um Warenkorb zu löschen - nur wenn angemeldet*/
     public void kaufeArtikelausWarenkorb(){
-        //Check ob CurrentUserID != Null
-        //Lösche den Warenkorb aus der Datenbank für die CurrentUserID
+        SQL.removeWarenkorb("Paul");
+        warenkorbListe.removeAll(warenkorbListe);
+        summePreis.setText("0,00 €");
+    }
+
+    public void ladeWarenkorb(){
+        Produkt[] warenkorbAusDatenbank = SQL.getWarenkorb("Paul");
+        for (Produkt produkt : warenkorbAusDatenbank) {
+            warenkorbListe.add(produkt);
+        }
+        updateWarenkorbSumme();
     }
 }
