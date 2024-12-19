@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="210.0" prefWidth="460.0" stylesheets="@Styling/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.DialogController">
-   <Pane fx:id="standartPaneStyle" layoutY="-2.0" prefHeight="220.0" prefWidth="490.0" styleClass="pane">
+   <Pane layoutY="-2.0" prefHeight="220.0" prefWidth="490.0" styleClass="pane" stylesheets="@Styling/style.css">
       <children>
       
                             <Label layoutX="14.0" layoutY="25.0" prefHeight="27.0" prefWidth="295.0" text="Vergebe Sie eine neue Geheimzahl ">
@@ -16,10 +16,15 @@
                   <Font size="18.0" />
               </font>
          </Label>
-         <TextField layoutX="14.0" layoutY="71.0" prefHeight="30.0" prefWidth="250.0" promptText="Neuen Benutzernamen vergeben" />
-          <TextField layoutX="14.0" layoutY="119.0" prefHeight="30.0" prefWidth="250.0" promptText="Neue Pin vergeben" />
+         <TextField fx:id="vendorBenutzername" layoutX="14.0" layoutY="71.0" prefHeight="30.0" prefWidth="250.0" promptText="Neuen Benutzernamen vergeben" />
+          <TextField fx:id="vendorPin" layoutX="14.0" layoutY="119.0" prefHeight="30.0" prefWidth="250.0" promptText="Neue Pin vergeben" />
           <Button fx:id="bestaetigen" layoutX="280.0" layoutY="120.0" mnemonicParsing="false" onAction="#dialogBestaetigen" text="Bestätigen " />
           <Button fx:id="abbrechen" layoutX="385.0" layoutY="120.0" mnemonicParsing="false" onAction="#dialogAbbrechen" text="Abbrechen" />
           <Label layoutX="14.0" layoutY="180.0" prefHeight="17.0" prefWidth="355.0" text="Verwenden sie eine sichere Kombination. Nicht: 1111, 1234, etc." />
+         <Label fx:id="sicherheitLabel" layoutX="280.0" layoutY="71.0" prefHeight="25.0" prefWidth="130.0" text="Pin nicht sicher ! " textFill="RED" visible="false">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </Label>
       </children></Pane>
 </AnchorPane>

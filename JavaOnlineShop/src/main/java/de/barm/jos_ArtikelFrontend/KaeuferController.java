@@ -130,7 +130,8 @@ public class KaeuferController {
     /**In dieser Methode werden die Labels initialisiert, sodass die Placeholder mit den Werten aus der Datenbank ersetzt werden, Schleife geht über alle Labels.*/
     public void labelInitialsierung (){
         //So werden die Labels gesetzt.
-        userName.setText("Benutzer nicht angemeldet");
+        userName.setText("Nicht angemeldet");
+        summePreis.setText("0,00 €");
 
         ArrayList<Produkt> produktListe = new ArrayList<Produkt>();
         for (Produkt produkt : Objects.requireNonNull(SQL.getArtikel())) {

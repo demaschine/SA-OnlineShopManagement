@@ -58,7 +58,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="artikelMitMeistGewLabel" layoutX="275.0" layoutY="170.0" prefHeight="25.0" prefWidth="185.0" text="[V@ArtMtGrGewinn]">
+            <Label fx:id="artikelMitMeistGewLabel" layoutX="14.0" layoutY="203.0" prefHeight="25.0" prefWidth="460.0" text="[V@ArtMtGrGewinn]">
                <font>
                   <Font size="16.0" />
                </font>

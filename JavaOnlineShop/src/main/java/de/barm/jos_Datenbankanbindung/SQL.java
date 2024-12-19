@@ -1,8 +1,4 @@
-package de.barm.jos_Datenbankanbindung; /**
- * Diese Klasse setzt die mit der SQLite Datenbank um.
- * @author Simon Braun
- * @version 1.0
- */
+package de.barm.jos_Datenbankanbindung;
 
 import de.barm.jos_ArtikelBackend.Bueroartikel;
 import de.barm.jos_ArtikelBackend.Freizeitartikel;
@@ -102,7 +98,7 @@ public class SQL {
     }
 
     /**
-     * Importiert alle Produkte in der Datenbank
+     * Importiert alle Produkte aus der Datenbank
      * @return Array an typisierten Produkten
      */
     public static Produkt[] getArtikel(){
