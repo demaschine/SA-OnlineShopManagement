@@ -102,7 +102,7 @@ public class SQL {
      * @return Array an typisierten Produkten
      */
     public static Produkt[] getArtikel(){
-        String stmt = "SELECT a._id, f._id, b._id, k._id, a.Name, a.BildURL, a.Einkaufspreis, a.Verkaufspreis, a.Bestand, f.MaxSpieler, b.Packungsgroesse, k.Farbe FROM Artikel a LEFT JOIN Freizeit f ON a._id = f._id LEFT JOIN Buero b ON a._id LEFT JOIN Kueche k ON a._id = k._id ORDER BY a._id;";
+        String stmt = "SELECT a._id, f._id, b._id, k._id, a.Name, a.BildURL, a.Einkaufspreis, a.Verkaufspreis, a.Bestand, f.MaxSpieler, b.Packungsgroesse, k.Farbe FROM Artikel a LEFT JOIN Freizeit f ON a._id = f._id LEFT JOIN Buero b ON a._id = b._id LEFT JOIN Kueche k ON a._id = k._id ORDER BY a._id;";
         ResultSet res = null;
         ArrayList<Produkt> out = new ArrayList<Produkt>();
         try {
