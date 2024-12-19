@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="875.0" prefWidth="1350.0" stylesheets="@Styling/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.VerkaeuferController">
    <children>
-      <Pane layoutX="214.0" layoutY="453.0" prefHeight="360.0" prefWidth="1110.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+      <Pane layoutX="214.0" layoutY="453.0" prefHeight="360.0" prefWidth="1130.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="100.0" text="Statistiken">
                <font>
@@ -65,7 +65,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="214.0" layoutY="80.0" prefHeight="360.0" prefWidth="1110.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane" stylesheets="@Styling/style.css">
+      <Pane layoutX="214.0" layoutY="80.0" prefHeight="360.0" prefWidth="1130.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane" stylesheets="@Styling/style.css">
          <children>
             <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="100.0" text="Verwaltung">
                <font>
@@ -78,7 +78,7 @@
                </font>
             </Label>
             <TextField fx:id="idFeld" layoutX="15.0" layoutY="100.0" prefHeight="25.0" prefWidth="290.0" promptText="Eingabe der Produkt ID für die Auswahl" />
-            <Button fx:id="werteBestaetigButton" layoutX="330.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Bestätigen" />
+            <Button fx:id="werteBestaetigButton" layoutX="330.0" layoutY="100.0" mnemonicParsing="false" onAction="#ladeProduktdaten" prefHeight="25.0" prefWidth="120.0" text="Bestätigen" />
             <Label layoutX="15.0" layoutY="145.0" prefHeight="25.0" prefWidth="350.0" text="Informationen über das ausgewählte Produkt">
                <font>
                   <Font name="System Bold" size="16.0" />
@@ -133,7 +133,7 @@
             <TextField fx:id="neuEinPreisFeld" layoutX="750.0" layoutY="100.0" prefHeight="25.0" prefWidth="250.0" promptText="Neuer Einkaufspreis" />
             <TextField fx:id="neuVerPreisFeld" layoutX="750.0" layoutY="140.0" prefHeight="25.0" prefWidth="250.0" promptText="Neuer Verkaufspreis" />
             <TextField fx:id="neuMengeFeld" layoutX="750.0" layoutY="180.0" prefHeight="25.0" prefWidth="250.0" promptText="Neue Bestandsmenge" />
-            <Button fx:id="werteAktualisierenButton" layoutX="815.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Werte aktualisieren" />
+            <Button fx:id="werteAktualisierenButton" layoutX="815.0" layoutY="250.0" mnemonicParsing="false" onAction="#aktualisiereProduktdaten" prefHeight="25.0" prefWidth="185.0" text="Werte aktualisieren" />
             <Label fx:id="idLabel" layoutX="200.0" layoutY="180.0" prefHeight="25.0" prefWidth="250.0" text="[V@ID]">
                <font>
                   <Font size="16.0" />
@@ -166,7 +166,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="kopfPane" layoutX="-4.0" prefHeight="60.0" prefWidth="1356.0" stylesheets="@Styling/style.css">
+      <Pane fx:id="kopfPane" layoutX="-4.0" prefHeight="60.0" prefWidth="1375.0" stylesheets="@Styling/style.css">
          <children>
             <ImageView fitHeight="43.0" fitWidth="346.0" layoutX="15.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -185,7 +185,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="14.0" layoutY="830.0" prefHeight="36.0" prefWidth="1310.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+      <Pane layoutX="14.0" layoutY="830.0" prefHeight="36.0" prefWidth="1330.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="14.0" layoutY="6.0" prefHeight="25.0" prefWidth="720.0" text="Version 1.0 - Team Einfach.Zuhause - Maximilian Mohr, Simon Braun, Felix Hempel, Paul Sas">
                <font>

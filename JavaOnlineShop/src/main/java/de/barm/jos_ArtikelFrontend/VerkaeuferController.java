@@ -54,6 +54,11 @@ public class VerkaeuferController {
     private double gesammtEinPreis = 0;
     private double gesammtVerPreis = 0;
     private Stage hauptfenster;  //Die Stage, die als Hauptfenster verwendet wird
+    private int selectedProdID;
+
+    //Globale ArrayList der Produkte
+    private ArrayList<Produkt> produkte = new ArrayList<Produkt>();
+    private Produkt gefundenesProdukt = null;
 
     /**Die Initialise-Methode um die Variablen und Programmablauf vorab zu Konfigurieren*/
     public void initialize() {
@@ -63,7 +68,6 @@ public class VerkaeuferController {
         verPreisLabel.setText("");
         mengeLabel.setText("");
 
-        ArrayList<Produkt> produkte = new ArrayList<Produkt>();
         for (Produkt produkt : Objects.requireNonNull(SQL.getArtikel())) {
             try{
                 produkte.add(produkt);
@@ -73,6 +77,11 @@ public class VerkaeuferController {
             }
         }
 
+        //Zuständig für alle Statistikwerte, die immer wieder berechnet werden müssen.
+        statistikenWerte();
+    }
+
+    public void statistikenWerte(){
         //For-Schleife die durch alle Produkte durchgeht und dessen Preis pro Durchlauf auf die Summe addiert.
         for (Produkt produkt : produkte) {
             gesammtEinPreis = gesammtEinPreis + produkt.getEinkaufspreis();
@@ -81,6 +90,8 @@ public class VerkaeuferController {
 
         einPreisAllerWarenLabel.setText(String.valueOf(gesammtEinPreis) + " €");
         verPreisAllerWarenLabel.setText(String.valueOf(gesammtVerPreis) + " €");
+
+        //Aufruf der dritten Statistik ist eine eigene Methode für die Übersicht.
         artikelMitMeistenGewinn(produkte);
     }
 
@@ -173,13 +184,56 @@ public class VerkaeuferController {
     /**Lade die Daten nach der ProduktID in die dazugehörigen Labels*/
     @FXML
     public void ladeProduktdaten() throws IOException {
-        //Nehme ein Objekt aus der ArrayList der Produkte und beschreibe die Labels mit den Daten
+        //Nehme ein Objekt aus der ArrayList entsprechend der ID aus den Produkten und beschreibe die Labels mit den Daten
+        String id = idFeld.getText();
+        if (id == null || id.isEmpty()) {
+            System.out.println("Keine ProduktID in dem TextField vorhanden.");
+            selectedProdID = 0;
+        }else{
+            try{
+                selectedProdID = Integer.parseInt(id);
+
+                if (selectedProdID == 0){
+                    System.out.println("Keine ProduktID in dem TextField vorhanden.");
+                }else{
+
+                    for (Produkt produkt : Objects.requireNonNull(SQL.getArtikel())) {
+                        if (produkt.getId() == selectedProdID) {
+                            gefundenesProdukt = produkt;
+                            break;
+                        }
+                    }
+
+                    //Beschreibe die Labels mit den gefundenen Werten
+                    idLabel.setText(String.valueOf(gefundenesProdukt.getId()));
+                    prodNameLabel.setText(gefundenesProdukt.getName());
+                    einPreisLabel.setText(String.valueOf(gefundenesProdukt.getEinkaufspreis()) + " €");
+                    verPreisLabel.setText(String.valueOf(gefundenesProdukt.getVerkaufspreis()) + " €");
+                    mengeLabel.setText(String.valueOf(gefundenesProdukt.getBestandsmenge()) + " Produkte");
+                }
+            }catch (NumberFormatException e){
+                System.out.println("Kein gültiger Format fur eine ProduktID eingegeben.");
+            }
+        }
     }
 
-    /**Nehme die Daten aus den TextField und beschreibe damit die ausgewählte ProduktID neu*/
+    /**Nehme die Daten aus den TextField und beschreibe damit das gefundene Produkt neu*/
     @FXML
     public void aktualisiereProduktdaten() throws IOException {
-
-        //Lade die Produktdaten neu()
+        if (neuProdNameFeld.getText() != null && !neuProdNameFeld.getText().isEmpty()) {
+            gefundenesProdukt.setName(neuProdNameFeld.getText());
+        }
+        if (neuEinPreisFeld.getText() != null && !neuEinPreisFeld.getText().isEmpty()) {
+            gefundenesProdukt.setEinkaufspreis(Double.parseDouble(neuEinPreisFeld.getText()));
+        }
+        if (neuVerPreisFeld.getText() != null && !neuVerPreisFeld.getText().isEmpty()) {
+            gefundenesProdukt.setVerkaufspreis(Double.parseDouble(neuVerPreisFeld.getText()));
+        }
+        if (neuMengeFeld.getText() != null && !neuMengeFeld.getText().isEmpty()) {
+            gefundenesProdukt.setBestandsmenge(Integer.parseInt(neuMengeFeld.getText()));
+        }
+        SQL.updateArtikel(gefundenesProdukt);
+        ladeProduktdaten();
+        statistikenWerte();
     }
 }

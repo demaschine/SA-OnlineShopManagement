@@ -349,7 +349,7 @@ public class SQL {
         }
 
         if(p instanceof Bueroartikel){
-            stmt = "UPDATE Buero SET Packungsgroesse = %d WHERE _id = %d;);";
+            stmt = "UPDATE Buero SET Packungsgroesse = %d WHERE _id = %d;";
             stmt = String.valueOf(f.format(stmt,((Bueroartikel) p).getPackungsgroesse(), p.getId()));
         }
 
