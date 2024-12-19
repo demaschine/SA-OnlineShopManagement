@@ -132,6 +132,7 @@ public class KaeuferController {
         summePreis.setText("0,00 €");
 
         ArrayList<Produkt> produktListe = new ArrayList<Produkt>();
+
         for (Produkt produkt : Objects.requireNonNull(SQL.getArtikel())) {
             try{
                 produktListe.add(produkt);
@@ -140,6 +141,65 @@ public class KaeuferController {
                 e.printStackTrace();
             }
         }
+
+        Button[] kKaufenButtons = {kKaufenButton1, kKaufenButton2, kKaufenButton3, kKaufenButton4};
+        Button[] bKaufenButtons = {bKaufenButton1, bKaufenButton2, bKaufenButton3, bKaufenButton4};
+        Button[] fKaufenButtons = {fKaufenButton1, fKaufenButton2, fKaufenButton3, fKaufenButton4};
+
+        //Buttons für Küchenartikel - Parameterübergabe an die Funktionen mithilfe von Lambda ausdrücken
+        for (int i = 0; i < kKaufenButtons.length; i++) {
+            final int index = i;
+            if (i < produktListe.size()) {
+                Produkt produkt = produktListe.get(i);
+                kKaufenButtons[i].setOnAction(event -> {
+                    try {
+                        fuegeArtikelZumWarenkorb(produkt, index);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+                kKaufenButtons[i].setDisable(false);
+            } else {
+                kKaufenButtons[i].setDisable(true);
+            }
+        }
+
+        // Buttons für Büroartikel
+        for (int i = 0; i < bKaufenButtons.length; i++) {
+            final int index = i;
+            if (i < produktListe.size()) {
+                Produkt produkt = produktListe.get(i);
+                bKaufenButtons[i].setOnAction(event -> {
+                    try {
+                        fuegeArtikelZumWarenkorb(produkt, index);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+                bKaufenButtons[i].setDisable(false);
+            } else {
+                bKaufenButtons[i].setDisable(true);
+            }
+        }
+
+        //Buttons für Freizeitartikel
+        for (int i = 0; i < fKaufenButtons.length; i++) {
+            final int index = i;
+            if (i < produktListe.size()) {
+                Produkt produkt = produktListe.get(i);
+                fKaufenButtons[i].setOnAction(event -> {
+                    try {
+                        fuegeArtikelZumWarenkorb(produkt, index);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+                fKaufenButtons[i].setDisable(false);
+            } else {
+                fKaufenButtons[i].setDisable(true);
+            }
+        }
+
         System.out.println(produktListe.toString());
 
         Label[] artikelNames = {kArtikelName1, kArtikelName2, kArtikelName3, kArtikelName4,
@@ -213,10 +273,11 @@ public class KaeuferController {
         stage.close();
     }
 
-    /**Methode fügt ausgewählten Artikel zur Warenkorbliste hinzu - benötigt eine Überladung*/
-    public void fuegeArtikelZumWarenkorb(){
-        //Check ob CurrentUserID != Null → Wenn ja dann LoginRegisterDialog()
 
+    /**Methode fügt ausgewählten Artikel zur Warenkorbliste hinzu - benötigt eine Überladung*/
+    public void fuegeArtikelZumWarenkorb(Produkt produkt, int index) throws IOException {
+        //Check ob CurrentUserID != Null → Wenn ja dann LoginRegisterDialog()
+        System.out.println("Produkt " + produkt.getName() + " mit Index " + index + " wurde gekauft.");
         //Füge der CurrentUserID das Produkt hinzu.
         //Schreibe den Artikel in den Warenkorb
     }
