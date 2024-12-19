@@ -86,8 +86,6 @@ public class KaeuferController {
     Button artikelKaufen;
     @FXML
     Button benutzerRegistrieren;
-    @FXML
-    Button alsGastKaufen;
 
     @FXML
     Button kKaufenButton1;
@@ -186,8 +184,33 @@ public class KaeuferController {
         loginDialog.show();
     }
 
-    public void wechselZuVerkauf(){
-        //
+    public void wechselZuVerkauf() throws IOException {
+        Stage venLoginDialog = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("VendorLogin.fxml"));
+        AnchorPane root = loader.load();
+
+        Scene dialogScene = new Scene(root, 400, 275);
+        dialogScene.getStylesheets().add(getClass().getResource("/de/barm/jos_ArtikelFrontend/Styling/style.css").toExternalForm());
+
+        venLoginDialog.setScene(dialogScene);
+        venLoginDialog.setTitle("In den Verkäufermodus einloggen");
+
+        InputStream iconStream = getClass().getResourceAsStream("/de/barm/jos_ArtikelFrontend/ImagesAndIcons/JOS_Transparent_Logo.png");
+        if (iconStream == null) {
+            System.out.println("Icon konnte nicht gefunden werden. Ueberpruefe den Pfad.");
+        } else {
+            Image icon = new Image(iconStream);
+            venLoginDialog.getIcons().add(icon);
+        }
+        venLoginDialog.show();
+        dialogAbbrechen();
+    }
+
+    @FXML
+    public void dialogAbbrechen() {
+        // Schließt den Dialog
+        Stage stage = (Stage) shopVerwaltung.getScene().getWindow();
+        stage.close();
     }
 
     /**Methode fügt ausgewählten Artikel zur Warenkorbliste hinzu - benötigt eine Überladung*/

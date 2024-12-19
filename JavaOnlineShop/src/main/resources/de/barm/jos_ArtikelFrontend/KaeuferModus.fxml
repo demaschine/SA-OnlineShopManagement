@@ -70,7 +70,7 @@
       </Pane>
       <Pane layoutX="15.0" layoutY="75.0" prefHeight="750.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
-            <Button fx:id="shopVerwaltung" layoutX="5.0" layoutY="667.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Shopverwaltung" />
+            <Button fx:id="shopVerwaltung" layoutX="5.0" layoutY="667.0" mnemonicParsing="false" onAction="#wechselZuVerkauf" prefHeight="25.0" prefWidth="175.0" text="Shopverwaltung" />
             <Button fx:id="benutzerWechseln" layoutX="5.0" layoutY="708.0" mnemonicParsing="false" onAction="#loginRegisterDialog" prefHeight="25.0" prefWidth="175.0" text="Benutzer wechseln" />
             <Label alignment="CENTER" layoutY="14.0" prefHeight="25.0" prefWidth="185.0" text="Aktueller Benutzer:">
                <font>

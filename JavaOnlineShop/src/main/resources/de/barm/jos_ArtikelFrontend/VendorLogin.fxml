@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="275.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.VendorLoginController">
+   <children>
+      <Pane prefHeight="275.0" prefWidth="400.0" styleClass="pane" stylesheets="@Styling/style.css">
+         <children>
+            <Button fx:id="cancelButton" layoutX="252.0" layoutY="200.0" mnemonicParsing="false" onAction="#dialogAbbrechen" prefHeight="28.0" prefWidth="96.0" text="Abbrechen" />
+            <Button fx:id="loginButton" layoutX="159.0" layoutY="200.0" mnemonicParsing="false" onAction="#wechselZuVerkaeufer" text="Einloggen" />
+            <TextField fx:id="loginPassword" layoutX="53.0" layoutY="144.0" prefHeight="30.0" prefWidth="295.0" promptText="Pin-Passwort eingeben" />
+            <TextField fx:id="loginUsername" layoutX="53.0" layoutY="89.0" prefHeight="30.0" prefWidth="295.0" promptText="Benutzernamen eingeben" />
+            <Label alignment="CENTER" layoutX="53.0" layoutY="33.0" prefHeight="27.0" prefWidth="295.0" text="Einloggen in die Verkäuferansicht">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
