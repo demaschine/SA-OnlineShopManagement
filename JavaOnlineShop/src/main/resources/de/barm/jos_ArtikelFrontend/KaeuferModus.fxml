@@ -15,13 +15,13 @@
    <children>
       <Pane layoutX="1105.0" layoutY="75.0" prefHeight="750.0" prefWidth="240.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
-            <Button layoutX="25.0" layoutY="675.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Registrieren" />
+            <Button fx:id="benutzerRegistrieren" layoutX="25.0" layoutY="675.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Registrieren" />
             <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0" text="Dein Warenkorb [W]">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TableView layoutX="20.0" layoutY="50.0" prefHeight="500.0" prefWidth="200.0">
+            <TableView fx:id="warenkorb" layoutX="20.0" layoutY="50.0" prefHeight="500.0" prefWidth="200.0">
               <columns>
                 <TableColumn prefWidth="120.0" resizable="false" text="Artikel" />
                 <TableColumn text="Preis in €" />
@@ -32,18 +32,18 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="25.0" layoutY="711.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Als Gast bestellen" />
+            <Button fx:id="alsGastKaufen" layoutX="25.0" layoutY="711.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Als Gast bestellen" />
             <Label layoutX="14.0" layoutY="561.0" prefHeight="25.0" prefWidth="100.0" text="Summe: " textFill="#008d26">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="126.0" layoutY="561.0" prefHeight="25.0" prefWidth="100.0" text="[V@BerWare]" textFill="#008d26">
+            <Label fx:id="summePreis" layoutX="126.0" layoutY="561.0" prefHeight="25.0" prefWidth="100.0" text="[V@BerWare]" textFill="#008d26">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button layoutX="25.0" layoutY="600.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Kaufen">
+            <Button fx:id="artikelKaufen" layoutX="25.0" layoutY="600.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Kaufen">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -71,15 +71,15 @@
       </Pane>
       <Pane layoutX="15.0" layoutY="75.0" prefHeight="750.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
-            <Button layoutX="5.0" layoutY="627.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Shopverwaltung" />
-            <Button layoutX="5.0" layoutY="667.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Warenkorb laden" />
-            <Button layoutX="5.0" layoutY="705.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Benutzer wechseln" />
+            <Button fx:id="shopVerwaltung" layoutX="5.0" layoutY="627.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Shopverwaltung" />
+            <Button fx:id="ladeWarenkorb" layoutX="5.0" layoutY="667.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Warenkorb laden" />
+            <Button fx:id="benutzerWechseln" layoutX="5.0" layoutY="705.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Benutzer wechseln" />
             <Label alignment="CENTER" layoutY="14.0" prefHeight="25.0" prefWidth="185.0" text="Aktueller Benutzer:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutY="39.0" prefHeight="25.0" prefWidth="185.0" text="[V@User]">
+            <Label fx:id="userName" alignment="CENTER" layoutY="39.0" prefHeight="25.0" prefWidth="185.0" text="[V@User]">
                <font>
                   <Font size="16.0" />
                </font>
@@ -101,7 +101,7 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="kKaufenButton1" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -110,12 +110,12 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName1]">
+                  <Label fx:id="kArtikelName1" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName1]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis1]">
+                  <Label fx:id="kArtikelPreis1" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis1]">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -129,17 +129,17 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName2]">
+                  <Label fx:id="kArtikelName2" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName2]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis2]">
+                  <Label fx:id="kArtikelPreis2" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis2]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="kKaufenButton2" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -157,17 +157,17 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName3]">
+                  <Label fx:id="kArtikelName3" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName3]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis3]">
+                  <Label fx:id="kArtikelPreis3" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis3]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="kKaufenButton3" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -185,17 +185,17 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName4]">
+                  <Label fx:id="kArtikelName4" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelName4]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis4]">
+                  <Label fx:id="kArtikelPreis4" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis4]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="kKaufenButton4" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -223,7 +223,7 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="bKaufenButton1" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -232,12 +232,12 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName1]">
+                  <Label fx:id="bArtikelName1" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName1]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis1]">
+                  <Label fx:id="bArtikelPreis1" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis1]">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -251,17 +251,17 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName2]">
+                  <Label fx:id="bArtikelName2" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName2]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis2]">
+                  <Label fx:id="bArtikelPreis2" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis2]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="bKaufenButton2" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -279,17 +279,17 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName3]">
+                  <Label fx:id="bArtikelName3" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName3]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis3]">
+                  <Label fx:id="bArtikelPreis3" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis3]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="bKaufenButton3" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -307,17 +307,17 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName4]">
+                  <Label fx:id="bArtikelName4" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelName4]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis4]">
+                  <Label fx:id="bArtikelPreis4" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis4]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="bKaufenButton4" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -345,7 +345,7 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="fKaufenButton1" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -354,12 +354,12 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName1]">
+                  <Label fx:id="fArtikelName1" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName1]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis1]">
+                  <Label fx:id="fArtikelPreis1" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis1]">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -373,17 +373,17 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName2]">
+                  <Label fx:id="fArtikelName2" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName2]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis2]">
+                  <Label fx:id="fArtikelPreis2" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis2]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="fKaufenButton2" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -401,17 +401,17 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName3]">
+                  <Label fx:id="fArtikelName3" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName3]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis3]">
+                  <Label fx:id="fArtikelPreis3" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis3]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="fKaufenButton3" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -429,17 +429,17 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName4]">
+                  <Label fx:id="fArtikelName4" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelName4]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis4]">
+                  <Label fx:id="fArtikelPreis4" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis4]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="fKaufenButton4" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
