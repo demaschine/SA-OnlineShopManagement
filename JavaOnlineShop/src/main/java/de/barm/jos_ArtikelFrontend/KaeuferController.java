@@ -3,11 +3,18 @@ package de.barm.jos_ArtikelFrontend;
 import de.barm.jos_ArtikelBackend.Produkt;
 import de.barm.jos_Datenbankanbindung.SQL;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -74,8 +81,6 @@ public class KaeuferController {
     @FXML
     Button shopVerwaltung;
     @FXML
-    Button ladeWarenkorb;
-    @FXML
     Button benutzerWechseln;
     @FXML
     Button artikelKaufen;
@@ -125,7 +130,7 @@ public class KaeuferController {
     /**In dieser Methode werden die Labels initialisiert, sodass die Placeholder mit den Werten aus der Datenbank ersetzt werden, Schleife geht über alle Labels.*/
     public void labelInitialsierung (){
         //So werden die Labels gesetzt.
-        userName.setText("Username");
+        userName.setText("Benutzer nicht angemeldet");
 
         ArrayList<Produkt> produktListe = new ArrayList<Produkt>();
         for (Produkt produkt : Objects.requireNonNull(SQL.getArtikel())) {
@@ -158,18 +163,43 @@ public class KaeuferController {
         }
     }
 
-    /**Methode fügt ausgewählten Artikel zur Warenkorbliste hinzu - benötigt eine Überladung*/
-    public void fuegeArtikelZumWarenkorb(){
+    /**Methode öffnet ein Dialogfenster, um sich einzuloggen oder neu zu registrieren*/
+    public void loginRegisterDialog() throws IOException {
+        Stage loginDialog = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginRegisterDialog.fxml"));
+        AnchorPane root = loader.load();
+        Scene dialogScene = new Scene(root, 400, 600);
+        dialogScene.getStylesheets().add(getClass().getResource("/de/barm/jos_ArtikelFrontend/Styling/style.css").toExternalForm());
 
+        loginDialog.setScene(dialogScene);
+        loginDialog.setTitle("Neuen Nutzer registrieren / einloggen");
+
+        InputStream iconStream = getClass().getResourceAsStream("/de/barm/jos_ArtikelFrontend/ImagesAndIcons/JOS_Transparent_Logo.png");
+        if (iconStream == null) {
+            System.out.println("Icon konnte nicht gefunden werden. Ueberpruefe den Pfad.");
+        } else {
+            Image icon = new Image(iconStream);
+            loginDialog.getIcons().add(icon);
+        }
+
+        loginDialog.show();
     }
 
+    public void wechselZuVerkauf(){
+        //
+    }
+
+    /**Methode fügt ausgewählten Artikel zur Warenkorbliste hinzu - benötigt eine Überladung*/
+    public void fuegeArtikelZumWarenkorb(){
+        //Check ob CurrentUserID != Null → Wenn ja dann LoginRegisterDialog()
+
+        //Füge der CurrentUserID das Produkt hinzu.
+        //Schreibe den Artikel in den Warenkorb
+    }
 
     /**Methode um Warenkorb zu löschen - nur wenn angemeldet*/
     public void kaufeArtikelausWarenkorb(){
-
-    }
-    /**Methode um Warenkorb zu löschen*/
-    public void kaufeArtikelalsGast(){
-
+        //Check ob CurrentUserID != Null
+        //Lösche den Warenkorb aus der Datenbank für die CurrentUserID
     }
 }

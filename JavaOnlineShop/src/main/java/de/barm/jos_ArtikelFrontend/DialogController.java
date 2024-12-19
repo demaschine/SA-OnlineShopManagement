@@ -1,5 +1,6 @@
 package de.barm.jos_ArtikelFrontend;
 
+import de.barm.jos_Datenbankanbindung.SQL;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
@@ -31,6 +32,8 @@ public class DialogController {
     @FXML
     public void dialogBestaetigen() throws IOException {
         // ToDo: Eine Anbindung an die Datenbank, um die neu vergebene Pin abzuspeichern
+
+        //SQL.addUser(dialogName, dialogPin, true);
 
         // Wechsel der Scene von Verkauf zu Einkauf
         if (hauptfenster != null) {

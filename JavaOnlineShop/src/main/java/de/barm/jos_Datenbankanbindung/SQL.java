@@ -307,7 +307,7 @@ public class SQL {
      * @param name Name des Users
      * @param pin PIN des Users
      * @param vendor Bestimmt ob der User ein Vendor sein soll oder nicht
-     * @return int: Anzahl der veränderten Zeilen in der Datenbank, 1 wenn nichts schief gelaufen ist
+     * @return int: Anzahl der veränderten Zeilen in der Datenbank, 1, wenn nichts schiefgelaufen ist
      */
     public static int updateUserVendor(String name, int pin, boolean vendor){
         Formatter f = new Formatter(Locale.US);

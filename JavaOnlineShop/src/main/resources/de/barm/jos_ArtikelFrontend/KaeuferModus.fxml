@@ -15,7 +15,7 @@
    <children>
       <Pane layoutX="1105.0" layoutY="75.0" prefHeight="750.0" prefWidth="240.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
-            <Button fx:id="benutzerRegistrieren" layoutX="25.0" layoutY="675.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Registrieren" />
+            <Button fx:id="benutzerRegistrieren" layoutX="27.0" layoutY="696.0" mnemonicParsing="false" onAction="#loginRegisterDialog" prefHeight="25.0" prefWidth="175.0" text="Registrieren" />
             <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0" text="Dein Warenkorb [W]">
                <font>
                   <Font size="16.0" />
@@ -27,12 +27,11 @@
                 <TableColumn text="Preis in €" />
               </columns>
             </TableView>
-            <Label alignment="CENTER" layoutX="22.0" layoutY="640.0" prefHeight="25.0" prefWidth="185.0" text="Noch kein Kunde?">
+            <Label alignment="CENTER" layoutX="22.0" layoutY="661.0" prefHeight="25.0" prefWidth="185.0" text="Noch kein Kunde?">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="alsGastKaufen" layoutX="25.0" layoutY="711.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Als Gast bestellen" />
             <Label layoutX="14.0" layoutY="561.0" prefHeight="25.0" prefWidth="100.0" text="Summe: " textFill="#008d26">
                <font>
                   <Font size="16.0" />
@@ -71,9 +70,8 @@
       </Pane>
       <Pane layoutX="15.0" layoutY="75.0" prefHeight="750.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
-            <Button fx:id="shopVerwaltung" layoutX="5.0" layoutY="627.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Shopverwaltung" />
-            <Button fx:id="ladeWarenkorb" layoutX="5.0" layoutY="667.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Warenkorb laden" />
-            <Button fx:id="benutzerWechseln" layoutX="5.0" layoutY="705.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Benutzer wechseln" />
+            <Button fx:id="shopVerwaltung" layoutX="5.0" layoutY="667.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Shopverwaltung" />
+            <Button fx:id="benutzerWechseln" layoutX="5.0" layoutY="708.0" mnemonicParsing="false" onAction="#loginRegisterDialog" prefHeight="25.0" prefWidth="175.0" text="Benutzer wechseln" />
             <Label alignment="CENTER" layoutY="14.0" prefHeight="25.0" prefWidth="185.0" text="Aktueller Benutzer:">
                <font>
                   <Font size="16.0" />
