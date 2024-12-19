@@ -186,7 +186,7 @@ public class SQL {
     /**
      * Aktualisiert ein Produkt in der Datenbak basierend auf dem übergebenen Produkt
      * (aktuell ungetestet)
-     * @param p Produkt, wie es in der Datenbank stehen soll
+     * @param p Produkt, dass im Warenkorb aktualisiert werden soll
      * @return true, wenn erfolgreich aktualisiert wurde
      */
     public static boolean updateArtikelAnzahlInWarenkorb(Produkt p){
@@ -203,7 +203,48 @@ public class SQL {
         return true;
     }
 
+    /**
+     * Entfernt ein Produkt in dem Warenkorb eines Users
+     * (aktuell ungetestet)
+     * @param p Produkt, dass aus dem Warenkorb entfernt werden soll
+     * @param user Username
+     * @return true, wenn erfolgreich eingefügt wurde
+     */
+    public static boolean removeArtikelInWarenkorb(Produkt p, String user){
+        Formatter f = new Formatter(Locale.US);
+        String stmt = "DELETE FROM WARENKORB WHERE _idArt = %d AND _idUser = '%s');";
+        stmt = String.valueOf(f.format(stmt, p.getId(),user));
 
+        try {
+            runUpdate(stmt);
+        } catch (SQLException e) {
+            System.out.print(e);
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Entfernt den Warenkorb eines Users
+     * (aktuell ungetestet)
+     * @param user Username
+     * @return true, wenn erfolgreich eingefügt wurde
+     */
+    public static boolean removeWarenkorb(String user){
+        Formatter f = new Formatter(Locale.US);
+        String stmt = "DELETE FROM WARENKORB WHERE _idUser = '%s');";
+        stmt = String.valueOf(f.format(stmt, user));
+
+        try {
+            runUpdate(stmt);
+        } catch (SQLException e) {
+            System.out.print(e);
+            return false;
+        }
+
+        return true;
+    }
 
     /**
      * Überprüft, ob ein User in der Datenbank eingetragen ist
