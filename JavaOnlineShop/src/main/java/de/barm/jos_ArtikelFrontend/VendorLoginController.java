@@ -11,6 +11,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Diese Klasse ist für den Wechsel aus der Shop Ansicht zu der Verkäuferansicht zuständig.
+ *
+ * @author Team Einfach.Zuhause, Paul Sas
+ * @version 1.0
+ */
+
 public class VendorLoginController {
     // FXML Button Variablen
     @FXML Button loginButton;

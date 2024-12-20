@@ -19,6 +19,14 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Diese Klasse ist für die Kommunikation zwischen dem Backend und dem Frontend zuständig.
+ * Einige Labels werden durch fehlerhaften SQL Statement nicht richtig belegt, Code ist auskommentiert, muss behoben werden.
+ *
+ * @author Paul Sas
+ * @Version 0.9
+ * */
+
 public class KaeuferController {
 
     //FXML Label Variablen
@@ -108,10 +116,20 @@ public class KaeuferController {
 
     private String currentUser;
 
+    /**
+     * Initialisiert das Fenster, indem es die Benutzeroberfläche mit den notwendigen Werten befüllt
+     * und alle notwendigen Komponenten wie Buttons und Labels einrichtet.
+     * Dabei werden auch Artikel aus der Datenbank geladen und den entsprechenden UI-Elementen zugewiesen.
+     */
     public void initialize() {
         labelInitialsierung();
     }
-    /**In dieser Methode werden die Labels initialisiert, sodass die Placeholder mit den Werten aus der Datenbank ersetzt werden, Schleife geht über alle Labels.*/
+
+    /**
+     * Initialisiert die Labels und Buttons in der Benutzeroberfläche.
+     * Setzt die Standardwerte für Benutzernamen und Preisanzeige und lädt die Artikel aus der Datenbank.
+     * Weist jedem Artikel aus der Produktliste ein Label und einen Button zu und fügt Event-Handler für den Warenkorb hinzu.
+     */
     public void labelInitialsierung (){
         //So werden die Labels gesetzt.
         userName.setText("Nicht angemeldet");
@@ -252,6 +270,12 @@ public class KaeuferController {
         warenkorbTableView.setItems(warenkorbListe);
     }
 
+    /**
+     * Wechselt zur Login-Seite für den Verkäufermodus.
+     * Öffnet ein neues Fenster, in dem der Benutzer sich mit einem PIN anmelden kann.
+     *
+     * @throws IOException wenn das FXML-File für den Login-Dialog nicht geladen werden kann.
+     */
     public void wechselZuVerkauf() throws IOException {
         Stage venLoginDialog = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("VendorLogin.fxml"));
@@ -274,6 +298,9 @@ public class KaeuferController {
         dialogAbbrechen();
     }
 
+    /**
+     * Schließt das aktuelle Dialogfenster und kehrt zum Hauptfenster zurück.
+     */
     @FXML
     public void dialogAbbrechen() {
         // Schließt den Dialog
@@ -282,7 +309,14 @@ public class KaeuferController {
     }
 
 
-    /**Methode fügt ausgewählten Artikel zur Warenkorbliste hinzu - benötigt eine Überladung*/
+    /**
+     * Fügt den ausgewählten Artikel zum Warenkorb hinzu.
+     * Aktualisiert die Warenkorbliste und berechnet die neue Summe.
+     *
+     * @param produkt Das Produkt, das in den Warenkorb gelegt wird.
+     * @param index   Der Index des Produkts in der UI.
+     * @throws IOException wenn es beim Hinzufügen des Produkts zu einem Fehler kommt.
+     */
     public void fuegeArtikelZumWarenkorb(Produkt produkt, int index) throws IOException {
         //Benötigt noch das Login
 
@@ -295,6 +329,9 @@ public class KaeuferController {
         updateWarenkorbSumme();
     }
 
+    /**
+     * Aktualisiert die Summe des Warenkorbs und zeigt den Gesamtpreis an.
+     */
     private void updateWarenkorbSumme() {
         double summe = 0;
         for (Produkt produkt : warenkorbListe) {
@@ -303,13 +340,19 @@ public class KaeuferController {
         summePreis.setText(String.format("%.2f €", summe));
     }
 
-    /**Methode um Warenkorb zu löschen - nur wenn angemeldet*/
+    /**
+     * Löscht den gesamten Inhalt des Warenkorbs und setzt die Preisanzeige auf 0,00 € zurück.
+     * Wird nur ausgeführt, wenn der Benutzer angemeldet ist.
+     */
     public void kaufeArtikelausWarenkorb(){
         SQL.removeWarenkorb("Paul");
         warenkorbListe.removeAll(warenkorbListe);
         summePreis.setText("0,00 €");
     }
 
+    /**
+     * Lädt den Warenkorb des Benutzers aus der Datenbank und zeigt die Artikel im UI an.
+     */
     public void ladeWarenkorb(){
         Produkt[] warenkorbAusDatenbank = SQL.getWarenkorb("Paul");
         for (Produkt produkt : warenkorbAusDatenbank) {
@@ -318,7 +361,11 @@ public class KaeuferController {
         updateWarenkorbSumme();
     }
 
-    /**Diese Methode stellt eine Anfrage an die Datenbank, wenn ein Nutzer mit der Pin übereinstimmt erfolgt die Anmeldung, wenn nicht, kommt eine Feedback-Nachricht*/
+    /**
+     * Authentifiziert den Benutzer anhand des Namens und der PIN.
+     * Wenn die Anmeldedaten korrekt sind, wird der Benutzername angezeigt und der Benutzer als angemeldet markiert.
+     * Andernfalls wird eine Fehlermeldung angezeigt.
+     */
     public void benutzerAnmeldung(){
         String name = loginNameFeld.getText();
         String pin =  loginPinFeld.getText();
@@ -333,7 +380,12 @@ public class KaeuferController {
         }
     }
 
-    /**Methode für die Nutzerregistrierung, Daten werden in die Datenbank geschrieben*/
+    /**
+     * Registriert einen neuen Benutzer in der Datenbank mit dem angegebenen Namen und der PIN.
+     * Die PIN darf nicht ein vordefiniertes Standard-PIN sein.
+     *
+     * @throws IOException wenn ein Fehler beim Hinzufügen des Benutzers zur Datenbank auftritt.
+     */
     public void registriereNeuenBenutzer() throws IOException {
         String name = neuerNameFeld.getText();
         String pin =  neuePinFeld.getText();
@@ -345,7 +397,9 @@ public class KaeuferController {
         }
     }
 
-    /**Methode um sich als Benutzer abzumelden - Warenkorb ist abgespeichert*/
+    /**
+     * Meldet den aktuellen Benutzer ab und leert den Warenkorb.
+     */
     @FXML
     public void abmelden(){
         if(currentUser != null){

@@ -5,6 +5,14 @@ import de.barm.jos_Datenbankanbindung.SQL;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Diese Klasse ist für Jegliche SQL Dumps oder Datenmanipulation sowie Test zuständig.
+ * Wäre praktisch für die weitere Entwicklung
+ *
+ * @author Team Einfach.Zuhause, Simon Braun, Paul Sas
+ * @version x
+ */
+
 public class Main {
     public static void main(String[] args) {
         //Initialisierung der Produktklasse

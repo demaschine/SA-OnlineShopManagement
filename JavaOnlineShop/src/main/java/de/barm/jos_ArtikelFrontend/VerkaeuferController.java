@@ -19,6 +19,13 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Diese Klasse ist für die Steuerung zwischen dem Backend und dem Frontend zuständig.
+ *
+ * @author Paul Sas, Team Einfach.Zuhause
+ * @version 0.9
+ * */
+
 public class VerkaeuferController {
 
     //FXML Label Variablen
@@ -65,7 +72,10 @@ public class VerkaeuferController {
     private ArrayList<Produkt> produkte = new ArrayList<Produkt>();
     private Produkt gefundenesProdukt = null;
 
-    /**Die Initialise-Methode um die Variablen und Programmablauf vorab zu Konfigurieren*/
+    /**
+     * Initialisiert die Ansicht, setzt die Labels auf leere Werte und lädt die Produktdaten aus der Datenbank.
+     * Setzt die entsprechenden Werte für die Tabellen und berechnet statistische Informationen.
+     */
     public void initialize() {
         idLabel.setText("");
         prodNameLabel.setText("");
@@ -97,6 +107,11 @@ public class VerkaeuferController {
         ermittleArtikelMitVerlust();
     }
 
+    /**
+     * Berechnet und zeigt die Gesamtpreise der Produkte sowie den Artikel mit dem höchsten Gewinn.
+     * Summiert die Einkaufspreise und Verkaufspreise aller Produkte und zeigt diese als Labels an.
+     * Rufen Sie die Methode auf, um den Artikel mit dem höchsten Gewinn zu ermitteln.
+     */
     public void statistikenWerte(){
         //For-Schleife die durch alle Produkte durchgeht und dessen Preis pro Durchlauf auf die Summe addiert.
         for (Produkt produkt : produkte) {
@@ -111,6 +126,13 @@ public class VerkaeuferController {
         artikelMitMeistenGewinn(produkte);
     }
 
+    /**
+     * Ermittelt das Produkt mit der höchsten Gewinnspanne (Verkaufspreis - Einkaufspreis) aus einer Liste von Produkten
+     * und zeigt den Namen sowie den Verkaufspreis dieses Produkts an.
+     * Falls kein Produkt mit Gewinnspanne gefunden wird, wird eine entsprechende Nachricht angezeigt.
+     *
+     * @param produktListe Die Liste von Produkten, aus der das Produkt mit der höchsten Gewinnspanne ermittelt werden soll.
+     */
     public void artikelMitMeistenGewinn(ArrayList<Produkt> produktListe){
         if (produktListe == null || produktListe.isEmpty()){
             //Ohne Produktliste kann nichts ermittelt werden, fehler abgreifen.
@@ -147,7 +169,12 @@ public class VerkaeuferController {
         this.hauptfenster = hauptfenster;
     }
 
-    /**Methode um einen Szenenwechsel zu der Verkäufer-Erstellung zu ermöglichen*/
+    /**
+     * Öffnet ein Dialogfenster zur Vergabe eines neuen PINs für einen Verkäufer.
+     * Wird beim Klicken auf einen Button im Hauptfenster ausgeführt.
+     *
+     * @throws IOException Wenn ein Fehler beim Laden der FXML-Datei oder bei der Anzeige des Dialogs auftritt.
+     */
     @FXML
     public void vergebePinDialog() throws IOException {
         Stage dialog = new Stage();
@@ -179,7 +206,12 @@ public class VerkaeuferController {
         dialog.show();
     }
 
-    /**Diese Methode dient dem On-Klick-Event für den Szenenwechsel im Hauptfenster, wird aus dem Dialog ferngesteuert*/
+    /**
+     * Wechselt die Szene im Hauptfenster zu einem anderen Modus, der den Einkaufsmodus darstellt.
+     * Diese Methode wird durch ein Klick-Ereignis ausgelöst und stellt sicher, dass das Hauptfenster korrekt gesetzt ist.
+     *
+     * @throws IOException Wenn ein Fehler beim Laden der FXML-Datei oder beim Wechsel der Szene auftritt.
+     */
     @FXML
     public void wechselEinkauf() throws IOException {
         //Stelle sicher, dass hauptfenster gesetzt wurde
@@ -197,7 +229,12 @@ public class VerkaeuferController {
         }
     }
 
-    /**Lade die Daten nach der ProduktID in die dazugehörigen Labels*/
+    /**
+     * Lädt die Produktdaten basierend auf der angegebenen Produkt-ID und zeigt diese in den entsprechenden Labels an.
+     * Falls keine gültige Produkt-ID eingegeben wurde, werden keine Daten geladen.
+     *
+     * @throws IOException Wenn ein Fehler beim Laden der Produktdaten auftritt.
+     */
     @FXML
     public void ladeProduktdaten() throws IOException {
         //Nehme ein Objekt aus der ArrayList entsprechend der ID aus den Produkten und beschreibe die Labels mit den Daten
@@ -233,7 +270,14 @@ public class VerkaeuferController {
         }
     }
 
-    /**Nehme die Daten aus den TextField und beschreibe damit das gefundene Produkt neu*/
+    /**
+     * Aktualisiert die Produktdaten basierend auf den Eingabewerten in den Textfeldern.
+     * Ändert den Produktnamen, Einkaufspreis, Verkaufspreis und die Bestandsmenge des ausgewählten Produkts
+     * und speichert die Änderungen in der Datenbank.
+     * Anschließend werden die Produktdaten und statistischen Werte neu geladen.
+     *
+     * @throws IOException Wenn ein Fehler beim Aktualisieren der Produktdaten auftritt.
+     */
     @FXML
     public void aktualisiereProduktdaten() throws IOException {
         if (neuProdNameFeld.getText() != null && !neuProdNameFeld.getText().isEmpty()) {
@@ -253,6 +297,11 @@ public class VerkaeuferController {
         statistikenWerte();
     }
 
+    /**
+     * Ermittelt alle Produkte, bei denen der Einkaufspreis höher ist als der Verkaufspreis,
+     * und fügt diese der Liste der Produkte mit Verlust hinzu.
+     * Wird verwendet, um Produkte mit Verlust zu identifizieren und anzuzeigen.
+     */
     @FXML
     public void ermittleArtikelMitVerlust() {
         verlustProdukte.clear();
