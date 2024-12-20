@@ -85,14 +85,36 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>de.barm.javaonlineshop/de.barm.jos_ArtikelFrontend.GUIApplication
-                            </mainClass>
+                            <mainClass>de.barm.javaonlineshop.de.barm.jos_ArtikelFrontend.GUIApplication</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Maven Shade Plugin für die Erstellung der fat JAR-Datei -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase> <!-- Das Plugin wird während des 'package' Phasenaufrufs ausgeführt -->
+                        <goals>
+                            <goal>shade</goal> <!-- Ziel: shade -->
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <!-- Setze die Hauptklasse (mainClass) der JAR-Datei -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>de.barm.javaonlineshop.de.barm.jos_ArtikelFrontend.GUIApplication</mainClass> <!-- Hier den Pfad zu deiner Hauptklasse -->
+                                </transformer>
+                            </transformers>
                         </configuration>
                     </execution>
                 </executions>

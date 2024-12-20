@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"}];updateSearchResults();
+packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"},{"m":"com.example.javaonlineshop","l":"de.barm.jos_ArtikelBackend"},{"m":"com.example.javaonlineshop","l":"de.barm.jos_ArtikelFrontend"},{"m":"com.example.javaonlineshop","l":"de.barm.jos_Datenbankanbindung"}];updateSearchResults();

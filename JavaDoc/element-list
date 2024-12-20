@@ -1,1 +1,4 @@
-Unbenanntes Package
+module:com.example.javaonlineshop
+de.barm.jos_ArtikelBackend
+de.barm.jos_ArtikelFrontend
+de.barm.jos_Datenbankanbindung
