@@ -2,13 +2,13 @@ package de.barm.jos_ArtikelFrontend;
 
 import de.barm.jos_ArtikelBackend.Produkt;
 import de.barm.jos_Datenbankanbindung.SQL;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -50,6 +50,11 @@ public class VerkaeuferController {
 
     //FXML TableView Variable
     @FXML TableView verlustTable;
+    @FXML private TableColumn<Produkt, String> nameColumn;
+    @FXML private TableColumn<Produkt, Double> einPreisColumn;
+    @FXML private TableColumn<Produkt, Double> verPreisColumn;
+    @FXML private TableColumn<Produkt, Double> verlustColumn;
+    private ObservableList<Produkt> verlustProdukte = FXCollections.observableArrayList();
 
     private double gesammtEinPreis = 0;
     private double gesammtVerPreis = 0;
@@ -77,8 +82,19 @@ public class VerkaeuferController {
             }
         }
 
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        einPreisColumn.setCellValueFactory(new PropertyValueFactory<>("einkaufspreis"));
+        verPreisColumn.setCellValueFactory(new PropertyValueFactory<>("verkaufspreis"));
+        verlustColumn.setCellValueFactory(cellData -> {
+            Produkt produkt = cellData.getValue();
+            double verlust = produkt.getEinkaufspreis() - produkt.getVerkaufspreis();
+            return new javafx.beans.property.SimpleDoubleProperty(verlust).asObject();
+        });
+        verlustTable.setItems(verlustProdukte);
+
         //Zuständig für alle Statistikwerte, die immer wieder berechnet werden müssen.
         statistikenWerte();
+        ermittleArtikelMitVerlust();
     }
 
     public void statistikenWerte(){
@@ -88,8 +104,8 @@ public class VerkaeuferController {
             gesammtVerPreis = gesammtVerPreis + produkt.getVerkaufspreis();
         }
 
-        einPreisAllerWarenLabel.setText(String.valueOf(gesammtEinPreis) + " €");
-        verPreisAllerWarenLabel.setText(String.valueOf(gesammtVerPreis) + " €");
+        einPreisAllerWarenLabel.setText(String.format("%.2f €", gesammtEinPreis));
+        verPreisAllerWarenLabel.setText(String.format("%.2f €", gesammtVerPreis));
 
         //Aufruf der dritten Statistik ist eine eigene Methode für die Übersicht.
         artikelMitMeistenGewinn(produkte);
@@ -119,7 +135,7 @@ public class VerkaeuferController {
 
         if (produktMitGroessterSpanne != null) {
             //Wennn ein Produkt ermittelt wurde, wird das Label mit dem Namen und dem Preis beschrieben
-            artikelMitMeistGewLabel.setText(produktMitGroessterSpanne.getName() + ", " + produktMitGroessterSpanne.getVerkaufspreis() + " €");
+            artikelMitMeistGewLabel.setText(String.format("%s, %.2f €", produktMitGroessterSpanne.getName(), produktMitGroessterSpanne.getVerkaufspreis()));
         } else {
             //Falls kein Produkt gefunden werden konnte, wird das Label mit folgender Nachricht beschrieben.
             artikelMitMeistGewLabel.setText("Kein Produkt mit Gewinnspanne gefunden");
@@ -173,7 +189,7 @@ public class VerkaeuferController {
             AnchorPane root = loader.load();
 
             //Neue Scene erstellen und setzen
-            Scene einkaufScene = new Scene(root, 1360, 880);
+            Scene einkaufScene = new Scene(root, 1527, 1000);
             einkaufScene.getStylesheets().add(getClass().getResource("/de/barm/jos_ArtikelFrontend/Styling/style.css").toExternalForm());
             hauptfenster.setScene(einkaufScene);
         } else {
@@ -207,8 +223,8 @@ public class VerkaeuferController {
                     //Beschreibe die Labels mit den gefundenen Werten
                     idLabel.setText(String.valueOf(gefundenesProdukt.getId()));
                     prodNameLabel.setText(gefundenesProdukt.getName());
-                    einPreisLabel.setText(String.valueOf(gefundenesProdukt.getEinkaufspreis()) + " €");
-                    verPreisLabel.setText(String.valueOf(gefundenesProdukt.getVerkaufspreis()) + " €");
+                    einPreisLabel.setText(String.format("%.2f €", gefundenesProdukt.getEinkaufspreis()));
+                    verPreisLabel.setText(String.format("%.2f €", gefundenesProdukt.getVerkaufspreis()));
                     mengeLabel.setText(String.valueOf(gefundenesProdukt.getBestandsmenge()) + " Produkte");
                 }
             }catch (NumberFormatException e){
@@ -235,5 +251,19 @@ public class VerkaeuferController {
         SQL.updateArtikel(gefundenesProdukt);
         ladeProduktdaten();
         statistikenWerte();
+    }
+
+    @FXML
+    public void ermittleArtikelMitVerlust() {
+        verlustProdukte.clear();
+        for (Produkt produkt : produkte) {
+            if (produkt.getEinkaufspreis() > produkt.getVerkaufspreis()) {
+                // Füge das Produkt in die ObservableList hinzu
+                verlustProdukte.add(produkt);
+            }
+        }
+        if (verlustProdukte.isEmpty()) {
+            System.out.println("Es wurden keine Produkte mit Verlust gefunden.");
+        }
     }
 }

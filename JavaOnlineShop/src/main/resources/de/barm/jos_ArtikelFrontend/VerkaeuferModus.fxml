@@ -37,10 +37,10 @@
             </Label>
             <TableView fx:id="verlustTable" layoutX="500.0" layoutY="55.0" prefHeight="295.0" prefWidth="600.0">
               <columns>
-                <TableColumn prefWidth="250.0" resizable="false" text="Bezeichnung" />
-                <TableColumn minWidth="0.0" prefWidth="120.0" resizable="false" text="Einkaufspreis" />
-                  <TableColumn prefWidth="120.0" resizable="false" text="Verkaufspreis" />
-                  <TableColumn prefWidth="110.0" resizable="false" text="Verlust in €" />
+                <TableColumn fx:id="nameColumn" prefWidth="250.0" resizable="false" text="Bezeichnung" />
+                <TableColumn fx:id="einPreisColumn" minWidth="0.0" prefWidth="120.0" resizable="false" text="Einkaufspreis" />
+                  <TableColumn fx:id="verPreisColumn" prefWidth="120.0" resizable="false" text="Verkaufspreis" />
+                  <TableColumn fx:id="verlustColumn" prefWidth="110.0" resizable="false" text="Verlust in €" />
               </columns>
             </TableView>
             <Label layoutX="500.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" text="Artikel die Verlust erzeugen:">
@@ -48,7 +48,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="einPreisAllerWarenLabel" layoutX="275.0" layoutY="70.0" prefHeight="25.0" prefWidth="185.0" text="[V@EinPreiAWare]">
+            <Label fx:id="einPreisAllerWarenLabel" layoutX="275.0" layoutY="70.0" prefHeight="25.0" prefWidth="110.0" text="[V@EinPreiAWare]">
                <font>
                   <Font size="16.0" />
                </font>

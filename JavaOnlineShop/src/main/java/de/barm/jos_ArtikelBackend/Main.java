@@ -35,27 +35,34 @@ public class Main {
 //
 //        System.out.println("Programm Beendet");
 
-        Kuechenartikel test1 = new Kuechenartikel(1004, "testBuero2","", 69.0,420.0, 1337, "Schwarz-Rosa-Gold");
-        Kuechenartikel test2 = new Kuechenartikel(1005, "testBuero3","", 69.0,420.0, 1337, "Schwarz-Rosa-Gold");
-        Kuechenartikel test3 = new Kuechenartikel(1006, "testBuero4","", 69.0,420.0, 1337, "Schwarz-Rosa-Gold");
+        Kuechenartikel test1 = new Kuechenartikel(1001, "Gabel Set","", 20,9.99, 200, "Silber");
+        Kuechenartikel test2 = new Kuechenartikel(1002, "Teller Set","", 30,19.9, 300, "Weiß");
+        Kuechenartikel test3 = new Kuechenartikel(1003, "Kochtopf","", 40,39.9, 100, "Silber");
+        Kuechenartikel test4 = new Kuechenartikel(1004, "Herd A++","", 320,420.0, 30, "Weiß");
 
-        Freizeitartikel test4 = new Freizeitartikel(1007, "testFrei1","",70.0,420.0,1333,100);
-        Freizeitartikel test5 = new Freizeitartikel(1008, "testFrei2","",70.0,420.0,1333,100);
-        Freizeitartikel test6 = new Freizeitartikel(1009, "testFrei3","",70.0,420.0,1333,100);
+        Freizeitartikel test5 = new Freizeitartikel(1005, "Tennisball","",5.9,9.9,3000,4);
+        Freizeitartikel test6 = new Freizeitartikel(1006, "UNO-Karten","",3.9,8.9,50,4);
+        Freizeitartikel test7 = new Freizeitartikel(1007, "Hantel","",45,29.9,100,1);
+        Freizeitartikel test8 = new Freizeitartikel(1008, "Gaming PC","",980,1.199,3,1);
 
-        Bueroartikel test7 = new Bueroartikel(1010, "testKuche1", "", 50.0, 420.0, 222, 20);
-        Bueroartikel test8 = new Bueroartikel(1011, "testKuche2", "", 50.0, 420.0, 222, 20);
-        Bueroartikel test9 = new Bueroartikel(1012, "testKuche3", "", 50.0, 420.0, 222, 20);
 
-        SQL.addArtikel(test1);
-        SQL.addArtikel(test2);
-        SQL.addArtikel(test3);
-        SQL.addArtikel(test4);
-        SQL.addArtikel(test5);
-        SQL.addArtikel(test6);
-        SQL.addArtikel(test7);
-        SQL.addArtikel(test8);
-        SQL.addArtikel(test9);
+        Bueroartikel test9 = new Bueroartikel(1009, "Büroklammer", "", 0.1, 0.5, 2000, 100);
+        Bueroartikel test10 = new Bueroartikel(10010, "Druckpapier A4", "", 1.0, 13.9, 1000, 500);
+        Bueroartikel test11 = new Bueroartikel(1011, "Java-Tasse", "", 2.0, 49.9, 200, 1);
+        Bueroartikel test12 = new Bueroartikel(1012, "Büro Monitor", "", 250, 299.9, 50, 1);
+
+        SQL.updateArtikel(test1);
+        SQL.updateArtikel(test2);
+        SQL.updateArtikel(test3);
+        SQL.updateArtikel(test4);
+        SQL.updateArtikel(test5);
+        SQL.updateArtikel(test6);
+        SQL.updateArtikel(test7);
+        SQL.updateArtikel(test8);
+        SQL.updateArtikel(test9);
+        SQL.updateArtikel(test10);
+        SQL.updateArtikel(test11);
+        SQL.updateArtikel(test12);
 
 
 

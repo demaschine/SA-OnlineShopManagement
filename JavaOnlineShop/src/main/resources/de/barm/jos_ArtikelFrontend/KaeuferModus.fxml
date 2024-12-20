@@ -12,46 +12,46 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="875.0" prefWidth="1350.0" stylesheets="@Styling/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.KaeuferController">
+<AnchorPane prefHeight="1000.0" prefWidth="1527.0" stylesheets="@Styling/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.barm.jos_ArtikelFrontend.KaeuferController">
    <children>
-      <Pane layoutX="1105.0" layoutY="75.0" prefHeight="750.0" prefWidth="240.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+      <Pane layoutX="1273.0" layoutY="76.0" prefHeight="860.0" prefWidth="240.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0" text="Dein Warenkorb">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TableView fx:id="warenkorbTableView" layoutX="20.0" layoutY="50.0" prefHeight="500.0" prefWidth="200.0">
+            <TableView fx:id="warenkorbTableView" layoutX="20.0" layoutY="50.0" prefHeight="680.0" prefWidth="200.0">
               <columns>
                 <TableColumn fx:id="nameColumn" prefWidth="120.0" resizable="false" text="Artikel" />
                 <TableColumn fx:id="preisColumn" text="Preis in €" />
               </columns>
             </TableView>
-            <Label layoutX="14.0" layoutY="598.0" prefHeight="25.0" prefWidth="100.0" text="Summe: " textFill="#008d26">
+            <Label layoutX="14.0" layoutY="741.0" prefHeight="25.0" prefWidth="100.0" text="Summe: " textFill="#008d26">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="summePreis" alignment="CENTER_RIGHT" layoutX="126.0" layoutY="598.0" prefHeight="25.0" prefWidth="100.0" text="[V@BerWare]" textFill="#008d26">
+            <Label fx:id="summePreis" alignment="CENTER_RIGHT" layoutX="126.0" layoutY="741.0" prefHeight="25.0" prefWidth="100.0" text="[V@BerWare]" textFill="#008d26">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button fx:id="artikelKaufen" layoutX="27.0" layoutY="657.0" mnemonicParsing="false" onAction="#kaufeArtikelausWarenkorb" prefHeight="25.0" prefWidth="175.0" text="Kaufen">
+            <Button fx:id="artikelKaufen" layoutX="33.0" layoutY="802.0" mnemonicParsing="false" onAction="#kaufeArtikelausWarenkorb" prefHeight="25.0" prefWidth="175.0" text="Kaufen">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Pane fx:id="kopfPane" prefHeight="60.0" prefWidth="1362.0">
+      <Pane fx:id="kopfPane" prefHeight="60.0" prefWidth="1527.0">
          <children>
             <ImageView fitHeight="43.0" fitWidth="346.0" layoutX="15.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@ImagesAndIcons/JOS_Transparent_Logo.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="1091.0" layoutY="20.0" prefHeight="27.0" prefWidth="250.0" text="Dein Rich-Client Onlineshop" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="1263.0" layoutY="17.0" prefHeight="27.0" prefWidth="250.0" text="Dein Rich-Client Onlineshop" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -63,10 +63,10 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="15.0" layoutY="75.0" prefHeight="750.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+      <Pane layoutX="15.0" layoutY="75.0" prefHeight="860.0" prefWidth="185.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
-            <Button fx:id="shopVerwaltung" layoutX="5.0" layoutY="696.0" mnemonicParsing="false" onAction="#wechselZuVerkauf" prefHeight="25.0" prefWidth="175.0" text="Shopverwaltung" />
-            <Button fx:id="anmeldenButton" layoutX="13.0" layoutY="237.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="160.0" text="Anmelden" />
+            <Button fx:id="shopVerwaltung" layoutX="5.0" layoutY="804.0" mnemonicParsing="false" onAction="#wechselZuVerkauf" prefHeight="25.0" prefWidth="175.0" text="Shopverwaltung" />
+            <Button fx:id="anmeldenButton" layoutX="14.0" layoutY="309.0" mnemonicParsing="false" onAction="#benutzerAnmeldung" prefHeight="28.0" prefWidth="160.0" text="Anmelden" />
             <Label alignment="CENTER" layoutY="14.0" prefHeight="25.0" prefWidth="185.0" text="Aktueller Benutzer:">
                <font>
                   <Font size="16.0" />
@@ -77,25 +77,36 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button fx:id="einkaufWiederherstellen" layoutX="5.0" layoutY="653.0" mnemonicParsing="false" onAction="#ladeWarenkorb" prefHeight="25.0" prefWidth="175.0" text="Einkauf w. Herstell." />
-            <Label alignment="CENTER" layoutY="113.0" prefHeight="25.0" prefWidth="185.0" text="Anmelden:">
+            <Button fx:id="einkaufWiederherstellen" layoutX="5.0" layoutY="755.0" mnemonicParsing="false" onAction="#ladeWarenkorb" prefHeight="25.0" prefWidth="175.0" text="Einkauf w. Herstell." />
+            <Label alignment="CENTER" layoutX="1.0" layoutY="185.0" prefHeight="25.0" prefWidth="185.0" text="Anmelden:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="loginNameFeld" layoutX="13.0" layoutY="145.0" prefHeight="30.0" prefWidth="160.0" promptText="Name" />
-            <TextField fx:id="loginPinFeld" layoutX="13.0" layoutY="188.0" prefHeight="30.0" prefWidth="160.0" promptText="Pin" />
-            <Button fx:id="registrierenButton" layoutX="14.0" layoutY="422.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="160.0" text="Registrieren" />
-            <Label alignment="CENTER" layoutX="1.0" layoutY="301.0" prefHeight="25.0" prefWidth="185.0" text="Registrieren:">
+            <TextField fx:id="loginNameFeld" layoutX="14.0" layoutY="217.0" prefHeight="30.0" prefWidth="160.0" promptText="Name" />
+            <TextField fx:id="loginPinFeld" layoutX="14.0" layoutY="260.0" prefHeight="30.0" prefWidth="160.0" promptText="Pin" />
+            <Button fx:id="registrierenButton" layoutX="15.0" layoutY="494.0" mnemonicParsing="false" onAction="#registriereNeuenBenutzer" prefHeight="28.0" prefWidth="160.0" text="Registrieren" />
+            <Label alignment="CENTER" layoutX="2.0" layoutY="373.0" prefHeight="25.0" prefWidth="185.0" text="Registrieren:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="neuerNameFeld" layoutX="14.0" layoutY="333.0" prefHeight="30.0" prefWidth="160.0" promptText="Neuer Name" />
-            <TextField fx:id="neuePinFeld" layoutX="14.0" layoutY="376.0" prefHeight="30.0" prefWidth="160.0" promptText="Neue Pin" />
+            <TextField fx:id="neuerNameFeld" layoutX="15.0" layoutY="405.0" prefHeight="30.0" prefWidth="160.0" promptText="Neuer Name" />
+            <TextField fx:id="neuePinFeld" layoutX="15.0" layoutY="448.0" prefHeight="30.0" prefWidth="160.0" promptText="Neue Pin" />
+            <Label fx:id="fehler1" alignment="CENTER" layoutX="2.0" layoutY="120.0" prefHeight="25.0" prefWidth="185.0" text="Anmeldung " textFill="RED" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="fehler2" alignment="CENTER" layoutX="2.0" layoutY="145.0" prefHeight="25.0" prefWidth="185.0" text="Fehlgeschlagen !" textFill="RED" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="6.0" layoutY="707.0" mnemonicParsing="false" onAction="#abmelden" prefHeight="25.0" prefWidth="175.0" text="Abmelden" />
          </children>
       </Pane>
-      <Pane layoutX="222.0" layoutY="75.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+      <Pane layoutX="222.0" layoutY="75.0" prefHeight="280.0" prefWidth="1020.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="15.0" layoutY="1.0" prefHeight="25.0" prefWidth="185.0" text="Küchenartikel">
                <font>
@@ -103,14 +114,14 @@
                </font>
             </Label>
             <Line endX="100.0" layoutX="115.0" layoutY="27.0" startX="-100.0" />
-            <Pane layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="20.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Button fx:id="kKaufenButton1" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="kKaufenButton1" layoutX="178.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -124,19 +135,24 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="kArtikelPreis1" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis1]">
+                  <Label fx:id="kArtikelPreis1" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis1]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="15.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="126.0" fitWidth="130.0" layoutX="15.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@ImagesAndIcons/Gabel2.jpg" />
                      </image>
                   </ImageView>
+                  <Label layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="Silber">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Pane layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="270.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -148,12 +164,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="kArtikelPreis2" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis2]">
+                  <Label fx:id="kArtikelPreis2" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis2]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="kKaufenButton2" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="kKaufenButton2" layoutX="178.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -162,14 +178,19 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="126.0" fitWidth="126.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@ImagesAndIcons/Teller.jpg" />
                      </image>
                   </ImageView>
+                  <Label layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="Weiß">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Pane layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="520.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -181,12 +202,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="kArtikelPreis3" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis3]">
+                  <Label fx:id="kArtikelPreis3" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis3]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="kKaufenButton3" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="kKaufenButton3" layoutX="178.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -195,14 +216,19 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="126.0" fitWidth="126.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@ImagesAndIcons/Topf.jpg" />
                      </image>
                   </ImageView>
+                  <Label fx:id="kZusatz3" layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis3]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Pane layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="770.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -214,12 +240,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="kArtikelPreis4" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis4]">
+                  <Label fx:id="kArtikelPreis4" layoutX="14.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis4]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="kKaufenButton4" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="kKaufenButton4" layoutX="173.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -228,16 +254,21 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="15.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="126.0" fitWidth="91.0" layoutX="15.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@ImagesAndIcons/Herdjpg.jpg" />
                      </image>
                   </ImageView>
+                  <Label fx:id="kZusatz4" layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="[K_ArtikelPreis4]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="224.0" layoutY="333.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+      <Pane layoutX="222.0" layoutY="366.0" prefHeight="280.0" prefWidth="1020.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="15.0" layoutY="1.0" prefHeight="25.0" prefWidth="185.0" text="Büroartikel">
                <font>
@@ -245,14 +276,14 @@
                </font>
             </Label>
             <Line endX="100.0" layoutX="115.0" layoutY="26.0" startX="-100.0" />
-            <Pane layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="20.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Button fx:id="bKaufenButton1" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="bKaufenButton1" layoutX="178.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -266,19 +297,24 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="bArtikelPreis1" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis1]">
+                  <Label fx:id="bArtikelPreis1" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis1]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="15.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="118.0" fitWidth="119.0" layoutX="15.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@ImagesAndIcons/Gabel2.jpg" />
+                        <Image url="@ImagesAndIcons/Bueroklammer.jpg" />
                      </image>
                   </ImageView>
+                  <Label layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="300 Stück">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Pane layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="270.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -290,12 +326,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="bArtikelPreis2" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis2]">
+                  <Label fx:id="bArtikelPreis2" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis2]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="bKaufenButton2" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="bKaufenButton2" layoutX="173.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -304,14 +340,19 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="118.0" fitWidth="91.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@ImagesAndIcons/Gabel2.jpg" />
+                        <Image url="@ImagesAndIcons/DruckerPapier.jpg" />
                      </image>
                   </ImageView>
+                  <Label layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="100 Stück">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Pane layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="520.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -323,12 +364,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="bArtikelPreis3" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis3]">
+                  <Label fx:id="bArtikelPreis3" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis3]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="bKaufenButton3" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="bKaufenButton3" layoutX="173.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -337,14 +378,19 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="120.0" fitWidth="119.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@ImagesAndIcons/Gabel2.jpg" />
+                        <Image url="@ImagesAndIcons/JavaTasse.png" />
                      </image>
                   </ImageView>
+                  <Label layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="1 Stück">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Pane layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="770.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -356,12 +402,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="bArtikelPreis4" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis4]">
+                  <Label fx:id="bArtikelPreis4" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[B_ArtikelPreis4]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="bKaufenButton4" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="bKaufenButton4" layoutX="173.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -370,16 +416,21 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="133.0" fitWidth="126.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@ImagesAndIcons/Gabel2.jpg" />
+                        <Image url="@ImagesAndIcons/Monitor.jpg" />
                      </image>
                   </ImageView>
+                  <Label layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="1 Stück">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="222.0" layoutY="590.0" prefHeight="235.0" prefWidth="860.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+      <Pane layoutX="222.0" layoutY="656.0" prefHeight="280.0" prefWidth="1020.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="15.0" layoutY="1.0" prefHeight="25.0" prefWidth="185.0" text="Freizeitartikel">
                <font>
@@ -387,14 +438,14 @@
                </font>
             </Label>
             <Line endX="100.0" layoutX="116.0" layoutY="26.0" startX="-100.0" />
-            <Pane layoutX="15.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="20.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Button fx:id="fKaufenButton1" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="fKaufenButton1" layoutX="173.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -408,19 +459,24 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="fArtikelPreis1" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis1]">
+                  <Label fx:id="fArtikelPreis1" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis1]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="118.0" fitWidth="118.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@ImagesAndIcons/Gabel2.jpg" />
+                        <Image url="@ImagesAndIcons/Tennisballjpg.jpg" />
                      </image>
                   </ImageView>
+                  <Label layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="4 Spieler">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Pane layoutX="225.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="269.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -432,12 +488,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="fArtikelPreis2" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis2]">
+                  <Label fx:id="fArtikelPreis2" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis2]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="fKaufenButton2" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="fKaufenButton2" layoutX="173.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -446,14 +502,19 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="15.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="118.0" fitWidth="118.0" layoutX="15.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@ImagesAndIcons/Gabel2.jpg" />
+                        <Image url="@ImagesAndIcons/UNO.jpg" />
                      </image>
                   </ImageView>
+                  <Label layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="4 Spieler">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Pane layoutX="435.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="520.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -465,12 +526,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="fArtikelPreis3" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis3]">
+                  <Label fx:id="fArtikelPreis3" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis3]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="fKaufenButton3" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="fKaufenButton3" layoutX="173.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -479,14 +540,19 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="15.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="119.0" fitWidth="119.0" layoutX="15.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@ImagesAndIcons/Gabel2.jpg" />
+                        <Image url="@ImagesAndIcons/Hantel.jpg" />
                      </image>
                   </ImageView>
+                  <Label layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="1 Spieler">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Pane layoutX="645.0" layoutY="50.0" prefHeight="170.0" prefWidth="200.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+            <Pane layoutX="770.0" layoutY="36.0" prefHeight="230.0" prefWidth="230.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0">
                      <font>
@@ -498,12 +564,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="fArtikelPreis4" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis4]">
+                  <Label fx:id="fArtikelPreis4" layoutX="15.0" layoutY="191.0" prefHeight="25.0" prefWidth="130.0" text="[F_ArtikelPreis4]">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="fKaufenButton4" layoutX="145.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
+                  <Button fx:id="fKaufenButton4" layoutX="173.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -512,16 +578,21 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="15.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="149.0" fitWidth="119.0" layoutX="15.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@ImagesAndIcons/Gabel2.jpg" />
+                        <Image url="@ImagesAndIcons/PC.jpg" />
                      </image>
                   </ImageView>
+                  <Label layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="130.0" text="1 Spieler">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="14.0" layoutY="836.0" prefHeight="36.0" prefWidth="1335.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
+      <Pane layoutX="14.0" layoutY="950.0" prefHeight="36.0" prefWidth="1500.0" style="-fx-effect: dropshadow(gaussian, rgba(50,50,50,0.2), 10, 0.5, 0.0, 0.0);" styleClass="pane">
          <children>
             <Label layoutX="14.0" layoutY="6.0" prefHeight="25.0" prefWidth="720.0" text="Version 1.0 - Team Einfach.Zuhause - Maximilian Mohr, Simon Braun, Felix Hempel, Paul Sas">
                <font>
